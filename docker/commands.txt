@@ -1,2 +1,2 @@
-docker compose up -d usercv => start user interface node container
+docker compose up -d cvuser => start user interface node container
 docker compose logs -f usercv => for checking node terminal in real time
