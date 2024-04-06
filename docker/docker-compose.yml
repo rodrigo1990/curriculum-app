@@ -1,6 +1,7 @@
 services:
   cvuser:
-    image: node:21-alpine3.18
+    build:
+      context: ./cvuser
     user: "node"
     working_dir: /home/node/app
     environment:
@@ -9,6 +10,7 @@ services:
       - './../cv-user:/home/node/app'
     ports:
     - "8080:8080"
+    - "8000:8000"
     command: sh -c "npm install && npm run serve"
 networks:
   net-test:
