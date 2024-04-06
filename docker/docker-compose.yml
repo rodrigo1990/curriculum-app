@@ -1,0 +1,28 @@
+services:
+  nginx: #los c ontenedores los ponemos dentro de servicios
+    container_name: nginx
+    ports:
+    - '8080:80'
+    image: nginx
+    volumes:
+      - './../index.html:/usr/share/nginx/html/index.html'
+    networks:
+      - net-test
+  cvuser:
+    image: node:21-alpine3.18
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - './../cv-user:/home/node/app'
+    ports:
+    - "8080:8080"
+    command: sh -c "npm install && npm run serve"
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - '3306:3306'
+networks:
+  net-test:
