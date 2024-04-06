@@ -1,2 +1,4 @@
 docker compose up -d cvuser => start user interface node container
 docker compose logs -f cvuser => for checking node terminal in real time
+docker compose exec cvuser  sh => for accessing node container
+vue ui --headless --port 8000 --host 0.0.0.0 => for accessing vue ui 
