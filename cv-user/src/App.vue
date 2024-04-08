@@ -3,21 +3,21 @@
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
-    <header-main/>
-    <body-main/>
+    <header-layout/>
+    <body-layout/>
   </html>
 </template>
 
 
 <script>
-  import HeaderMain from './components/sections/HeaderMain.vue'
-  import BodyMain from './components/sections/BodyMain.vue'
+  import HeaderLayout from './components/Layout/HeaderLayout.vue'
+  import BodyLayout from './components/Layout/BodyLayout.vue'
 
   export default {
     name: 'App',
     components: {
-      HeaderMain,
-      BodyMain
+      HeaderLayout,
+      BodyLayout
     }
   }
   </script>
