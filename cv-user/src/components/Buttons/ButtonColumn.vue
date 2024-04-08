@@ -16,9 +16,7 @@ export default {
 }
 </script>
 
-<style>
-    a {
-        color: white;
-        font-size:24px;
-    }
+<style scoped lang="scss">
+    @import "./src/styles/button-column.scss";
 </style>
+

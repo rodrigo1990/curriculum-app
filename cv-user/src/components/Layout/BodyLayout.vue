@@ -1,7 +1,7 @@
 <template>
   <row class="row" container :gutter="12">
       <column :xs="12" :lg="6"> 
-        <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>>
+        <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
       </column>
       <column :xs="12" :lg="6">
     </column>
@@ -10,7 +10,7 @@
 
 <script>
 import { Row, Column } from 'vue-grid-responsive';
-import ButtonsColumn from './../ButtonsColumn.vue'
+import ButtonsColumn from '../Buttons/ButtonsColumn.vue'
 export default {
     name: 'BodyMain',
     components: {

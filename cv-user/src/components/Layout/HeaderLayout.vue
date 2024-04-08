@@ -14,7 +14,7 @@
 <script>
 import { Row, Column, Hidden } from 'vue-grid-responsive';
 export default {
-    name: 'HeaderMain',
+    name: 'HeaderLayout',
     components: {
     Row,
     Column,
