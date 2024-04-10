@@ -2,10 +2,11 @@
   <div>
     <a href="" @mouseover="animateLine" @mouseleave="animateLine">
       {{ msg }}
+      <Transition>
+        <div v-if="animate" div class="line"></div>
+      </Transition>
     </a>
-    <Transition>
-      <div v-if="animate" div class="line"></div>
-    </Transition>
+    
     
   </div>
 </template>
