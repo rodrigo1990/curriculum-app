@@ -9,3 +9,32 @@ a {
     font-size: 1.80rem;
     text-decoration: none;
 }
+
+.line{
+    height: 2px;
+    background-color: green;
+}
+
+.v-enter-active,.v-leave-active {
+    transition: width 0.5s ease;
+}
+
+/* Define the initial width of the element */
+.v-enter-from{
+    width: 0;
+}
+
+.v-enter-to {
+    width: 100%;
+}
+
+.v-leave-from {
+    width: 100%;
+}
+
+.v-leave-to {
+    width: 0;
+}
+
+
+
