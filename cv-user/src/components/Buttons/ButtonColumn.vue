@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="" @mouseover="animateLine" @mouseleave="animateLine">
+    <a href="" @mouseover="animateLine" @mouseleave="unanimateLine">
       {{ msg }}
       <Transition>
         <div v-if="animate" div class="line"></div>
@@ -24,12 +24,16 @@ export default {
     setup() {
       const animate = ref(false)
       function animateLine(){
-          animate.value = !animate.value
+          animate.value = true
+      }
+      function unanimateLine(){
+          animate.value = false
       }
       // expose the ref to the template
       return {
         animate,
-        animateLine
+        animateLine,
+        unanimateLine
       }
   }
 }
