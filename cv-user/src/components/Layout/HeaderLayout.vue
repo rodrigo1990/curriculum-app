@@ -23,18 +23,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .row  {
-      padding:20px 50px;
-  }
-
-  .row a{
-    text-decoration: none;
-    color:white;
-  }
-
-  .right{
-    text-align: right;;
-  }
+<style scoped lang="scss">
+    @import "./src/styles/header-layout.scss";
 </style>

@@ -21,10 +21,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .row  {
-      padding-top:20px;
-      padding:0px 50px;
-  }
+<style scoped lang="scss">
+    @import "./src/styles/body-layout.scss";
 </style>
