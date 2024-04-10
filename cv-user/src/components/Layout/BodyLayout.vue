@@ -1,11 +1,13 @@
 <template>
-  <row class="row" container :gutter="12">
-      <column :xs="12" :lg="6"> 
-        <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
+  <div class="container">
+    <row container :gutter="12">
+        <column :xs="12" :lg="6"> 
+          <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
+        </column>
+        <column :xs="12" :lg="6">
       </column>
-      <column :xs="12" :lg="6">
-    </column>
-  </row>
+    </row>
+  </div>
 </template>
 
 <script>

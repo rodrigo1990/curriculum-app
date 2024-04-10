@@ -1,13 +1,17 @@
 <template>
     <hidden :xs="true" :sm="true">
-        <row class="row" container :gutter="12">
-            <column class="logo" :xs="12" :md="4" :lg="3"> 
-              <a href="">This is a logo</a> 
-            </column>
-            <column :xs="12" :md="4" :lg="3"></column>
-            <column class="right" :md="4" :lg="3"> <a href="">Button 1</a> </column>
-            <column class="right" :md="4" :lg="3"> <a href="">Call me</a> </column>
-        </row>
+        <div class="container">
+          <div class="header">
+            <row container :gutter="12">
+                <column class="logo" :xs="12" :md="4" :lg="3"> 
+                  <a href="">This is a logo</a> 
+                </column>
+                <column :xs="12" :md="4" :lg="3"></column>
+                <column class="right" :md="4" :lg="3"> <a href="">Button 1</a> </column>
+                <column class="right" :md="4" :lg="3"> <a href="">Call me</a> </column>
+            </row>
+          </div>
+        </div>
   </hidden>
 </template>
 
