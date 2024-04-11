@@ -4,11 +4,17 @@
           <div class="header">
             <row container :gutter="12">
                 <column class="logo" :xs="12" :md="4" :lg="3"> 
-                  <a href="">This is a logo</a> 
+                  <a href="">
+                    <ButtonHeader msg="This is a logo" />
+                  </a> 
                 </column>
                 <column :xs="12" :md="4" :lg="3"></column>
-                <column class="right" :md="4" :lg="3"> <a href="">Button 1</a> </column>
-                <column class="right" :md="4" :lg="3"> <a href="">Call me</a> </column>
+                <column class="right" :md="4" :lg="3">
+                   <ButtonHeader msg="Button 1" /> 
+                </column>
+                <column class="right" :md="4" :lg="3">
+                   <ButtonHeader msg="Call me" /> 
+                </column>
             </row>
           </div>
         </div>
@@ -17,12 +23,14 @@
 
 <script>
 import { Row, Column, Hidden } from 'vue-grid-responsive';
+import ButtonHeader from './../Buttons/ButtonHeader.vue';
 export default {
     name: 'HeaderLayout',
     components: {
     Row,
     Column,
-    Hidden
+    Hidden,
+    ButtonHeader
   }
 }
 </script>

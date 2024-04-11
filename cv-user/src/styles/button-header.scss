@@ -5,17 +5,16 @@
 
 a {
     position: relative;
-    display: inline-block;
     font-family: 'Roboto-Thin';
     color: white;
-    font-size: 1.70rem;
+    font-size: 1.9rem;
     text-decoration: none;
     height: 10px;
 }
 
 .line{
-    height: 2px;
-    background-color: #CC5F00;;
+    height: 10px;
+    background-color: rgba(74, 34, 0, 0.7);
 }
 
 .v-enter-active,.v-leave-active {
@@ -30,17 +29,17 @@ a {
 
 .v-enter-to {
     width: 100%;
-    height: 2px;
+    height: 10px;
 }
 
 .v-leave-from {
     width: 100%;
-    height: 2px;
+    height: 10px;
 }
 
 .v-leave-to {
     width: 0;
-    height: 4px;
+    height: 10px;
 }
 
 
