@@ -1,18 +1,13 @@
 <template>
   <div>
-    <a href="" @mouseover="animateLine" @mouseleave="unanimateLine">
-      {{ msg }}
-      <Transition>
-        <div div class="square"></div>
-      </Transition>
+    <a href="data-container">
+      <span class="btn">{{ msg }}</span>
     </a>
-    
     
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
 export default {
     name:'ButtonHeader',
     props: {
@@ -21,21 +16,6 @@ export default {
             required:true
         }
     },
-    setup() {
-      const animate = ref(false)
-      function animateLine(){
-          animate.value = true
-      }
-      function unanimateLine(){
-          animate.value = false
-      }
-      // expose the ref to the template
-      return {
-        animate,
-        animateLine,
-        unanimateLine
-      }
-  }
 }
 </script>
 
