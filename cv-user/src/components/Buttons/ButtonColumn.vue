@@ -3,7 +3,7 @@
     <a href="" @mouseover="animateLine" @mouseleave="unanimateLine">
       {{ msg }}
       <Transition>
-        <div v-if="animate" div class="line"></div>
+        <div v-if="animate"  class="line"></div>
       </Transition>
     </a>
     
@@ -12,28 +12,27 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref } from 'vue';
+
 export default {
-    name:'ButtonColumn',
-    props: {
-        msg: {
-            type: String,
-            required:true
-        }
-    },
-    setup() {
-      const animate = ref(false)
-      function animateLine(){
-          animate.value = true
+  name:'ButtonColumn',
+  props: {
+      msg: {
+          type: String,
+          required:true
       }
-      function unanimateLine(){
-          animate.value = false
-      }
-      // expose the ref to the template
-      return {
-        animate,
-        animateLine,
-        unanimateLine
+  },
+  data() {
+    return {
+      animate:ref(false)
+    }
+  },
+  methods:{
+      animateLine(){
+          this.animate = true
+      },
+      unanimateLine(){
+          this.animate = false
       }
   }
 }
