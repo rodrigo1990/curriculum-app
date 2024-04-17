@@ -1,0 +1,23 @@
+.profile-img{
+    background-image: url('@/assets/images/pic.jpg');
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius: 13px;
+    width: 20rem;
+    height: 30rem;
+    z-index: 1;
+}
+
+.profile-img:after{
+    content: " ";
+    background-color: transparent;
+    border:2px solid #CC5F00;
+    position: absolute;
+    height: 30rem;
+    width: 20rem;
+    left: 2.5rem;
+    top:2.5rem;
+    border-radius: 13px;
+    z-index: -1;
+}

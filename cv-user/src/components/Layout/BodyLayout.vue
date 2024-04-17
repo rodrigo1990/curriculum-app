@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <row container :gutter="12">
-        <column :xs="12" :lg="6"> 
+        <column :xs="12" :lg="2"> 
           <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
         </column>
         <column :xs="12" :lg="6">
-      </column>
+          <ProfileImage />
+        </column>
     </row>
   </div>
 </template>
@@ -13,12 +14,14 @@
 <script>
 import { Row, Column } from 'vue-grid-responsive';
 import ButtonsColumn from '../Buttons/ButtonsColumn.vue'
+import ProfileImage from '../ProfilePics/ProfileImage.vue';
 export default {
     name: 'BodyMain',
     components: {
         ButtonsColumn,
         Row,
-        Column
+        Column,
+        ProfileImage
   }
 }
 </script>
