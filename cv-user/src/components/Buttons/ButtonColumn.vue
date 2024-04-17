@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
 
 export default {
   name:'ButtonColumn',
@@ -24,7 +23,7 @@ export default {
   },
   data() {
     return {
-      animate:ref(false)
+      animate:false
     }
   },
   methods:{
