@@ -14,10 +14,9 @@ export default {
       }
     },
     methods: {
-    getImagePath(imageName) {
-      imageName = require('@/assets/images/'+imageName);
+    getImagePath(path) {
       // Concatenate the image path with the property value
-      return  imageName;
+      return  require('@/assets/images/'+path);
     }
   }
 }
