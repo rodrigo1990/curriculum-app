@@ -5,7 +5,7 @@
           <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
         </column>
         <column :xs="12" :lg="6">
-          <ProfileImage />
+          <ProfileImage path="pic.jpg"/>
         </column>
     </row>
   </div>
