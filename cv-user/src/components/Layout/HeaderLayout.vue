@@ -5,15 +5,12 @@
             <row container :gutter="12">
                 <column class="logo" :xs="12" :md="4" :lg="3"> 
                   <a href="">
-                    <ButtonHeader msg="This is a logo" />
+                    <ButtonHeader :contentId="this.btnsHeaderData[0].id" description="This is a logo" />
                   </a> 
                 </column>
                 <column :xs="12" :md="4" :lg="3"></column>
-                <column class="right" :md="4" :lg="3">
-                   <ButtonHeader msg="Button 1" /> 
-                </column>
-                <column class="right" :md="4" :lg="3">
-                   <ButtonHeader msg="Call me" /> 
+                <column v-for="(btn, index) in this.btnsHeaderData" :key="index" class="right" :md="4" :lg="3">
+                  <ButtonHeader :contentId="btn.id" :description="btn.description" /> 
                 </column>
             </row>
           </div>
@@ -24,8 +21,15 @@
 <script>
 import { Row, Column, Hidden } from 'vue-grid-responsive';
 import ButtonHeader from './../Buttons/ButtonHeader.vue';
+import { btnsHeaderData } from '@/dummyData/linksHeader';
+
 export default {
     name: 'HeaderLayout',
+    data(){
+      return {
+        btnsHeaderData:btnsHeaderData
+      }
+    },
     components: {
     Row,
     Column,

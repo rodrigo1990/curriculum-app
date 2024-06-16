@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a href="data-container">
-      <span class="btn">{{ msg }}</span>
+    <a>
+      <RouterLink :to="`/content/${contentId}`" class="btn">{{ description }}</RouterLink>
     </a>
     
   </div>
@@ -11,11 +11,15 @@
 export default {
     name:'ButtonHeader',
     props: {
-        msg: {
-            type: String,
-            required:true
-        }
-    },
+      description: {
+          type: String,
+          required:true
+      },
+      contentId:{
+        type:Number,
+        required:true
+      }
+  },
 }
 </script>
 
