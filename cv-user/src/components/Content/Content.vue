@@ -26,7 +26,6 @@ export default {
     },
     methods:{ 
         setState(to){
-            
             this.data = contentData[to.params.id].content
         }
     }
