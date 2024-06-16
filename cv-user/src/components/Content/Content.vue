@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { contentData } from '@/dummyData/content'
+import { ContentData } from '@/dummyData/ContentData'
 export default {
     name:"Content",
     data(){
@@ -26,7 +26,7 @@ export default {
     },
     methods:{ 
         setState(to){
-            this.data = contentData.find(item => item.id == to.params.id);
+            this.data = ContentData.find(item => item.id == to.params.id);
             //contentData[to.params.id].content
         }
     }
