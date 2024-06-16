@@ -3,7 +3,7 @@
     <row container :gutter="12">
         
       <column :xs="12" :lg="1"> 
-          <ButtonsColumn :buttonsArray="['Whoami','Academics','Services','Github']"/>
+          <ButtonsColumn :buttonsArray="this.btnsData"/>
         </column>
         
         <column :xs="12" :lg="4">
@@ -11,7 +11,7 @@
         </column>
 
         <column :xs="12" :lg="7">
-          <Content />
+          <RouterView />
         </column>
     
       </row>
@@ -22,15 +22,40 @@
 import { Row, Column } from 'vue-grid-responsive';
 import ButtonsColumn from '../Buttons/ButtonsColumn.vue'
 import ProfileImage from '../ProfilePics/ProfileImage.vue';
-import Content from '../Content/Content.vue';
+import { RouterView } from 'vue-router';
 export default {
     name: 'BodyMain',
+    data(){
+      return {
+        btnsData:null
+      }
+    },
     components: {
+        RouterView,
         ButtonsColumn,
         Row,
         Column,
         ProfileImage,
-        Content
+  },
+  beforeMount(){
+    this.btnsData = [
+      {
+        'id': 1,
+        'description': 'Whoami',
+      },
+      {
+        'id': 2,
+        'description': 'Academics',
+      },
+      {
+        'id': 3,
+        'description': 'Services',
+      },
+      {
+        'id': 4,
+        'description': 'Github',
+      },
+    ]
   }
 }
 </script>

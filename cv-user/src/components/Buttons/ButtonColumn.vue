@@ -1,25 +1,33 @@
 <template>
   <div>
-    <a href="" @mouseover="animateLine" @mouseleave="unanimateLine">
-      {{ msg }}
+    <RouterLink :to="`/content/${contentId}`" @mouseover="animateLine" @mouseleave="unanimateLine">
+      {{ description }}
       <Transition>
         <div v-if="animate"  class="line"></div>
       </Transition>
-    </a>
+    </RouterLink>
     
     
   </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router'
 
 export default {
   name:'ButtonColumn',
   props: {
-      msg: {
+      description: {
           type: String,
           required:true
+      },
+      contentId:{
+        type:Number,
+        required:true
       }
+  },
+  components:{
+    RouterLink
   },
   data() {
     return {
