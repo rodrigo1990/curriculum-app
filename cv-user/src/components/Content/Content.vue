@@ -23,18 +23,28 @@ export default {
     mounted(){
         this.setState(this.$route)
     },
-    methods:{
+    methods:{ 
         setState(to){
-            if(to.params.id == 1){
-                this.data = ['<p> I am a developer from Argentina, I like PHP etc. </p>']
-            }else if(to.params.id == 2){
-                this.data = ['<p> Section 2 </p>']
-            }else if(to.params.id == 3){
-                this.data = ['<p> Section 3 </p>']
-            }
-            else{
-                this.data = ['<p> Something else </p>']
-            }
+            const contentData = [
+                {
+                    id:1,
+                    content:['<p> I am a developer from Argentina, I like PHP etc. </p>']
+                },
+                {
+                    id:2,
+                    content:['<p> Section 2 </p>']
+                },
+                {
+                    id:3,
+                    content:['<p> Section 3 </p>']
+                },
+                {
+                    id:4,
+                    content:['<p> Section 4 </p>']
+                },
+
+            ]
+            this.data = contentData[to.params.id].content
         }
     }
 }

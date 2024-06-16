@@ -40,19 +40,19 @@ export default {
   beforeMount(){
     this.btnsData = [
       {
-        'id': 1,
+        'id': 0,
         'description': 'Whoami',
       },
       {
-        'id': 2,
+        'id': 1,
         'description': 'Academics',
       },
       {
-        'id': 3,
+        'id': 2,
         'description': 'Services',
       },
       {
-        'id': 4,
+        'id': 3,
         'description': 'Github',
       },
     ]
