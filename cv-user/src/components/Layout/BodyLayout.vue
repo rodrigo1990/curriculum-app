@@ -23,12 +23,12 @@ import { Row, Column } from 'vue-grid-responsive';
 import ButtonsColumn from '../Buttons/ButtonsColumn.vue'
 import ProfileImage from '../ProfilePics/ProfileImage.vue';
 import { RouterView } from 'vue-router';
-import { btnsData } from '@/dummyData/links';
+import { BtnsBodyData } from '@/dummyData/BtnsBodyData';
 export default {
     name: 'BodyMain',
     data(){
       return {
-        btnsData:btnsData
+        btnsData:BtnsBodyData
       }
     },
     components: {

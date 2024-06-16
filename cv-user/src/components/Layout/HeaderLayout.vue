@@ -21,13 +21,13 @@
 <script>
 import { Row, Column, Hidden } from 'vue-grid-responsive';
 import ButtonHeader from './../Buttons/ButtonHeader.vue';
-import { btnsHeaderData } from '@/dummyData/linksHeader';
+import { BtnsHeaderData } from '@/dummyData/BtnsHeaderData';
 
 export default {
     name: 'HeaderLayout',
     data(){
       return {
-        btnsHeaderData:btnsHeaderData
+        btnsHeaderData:BtnsHeaderData
       }
     },
     components: {
