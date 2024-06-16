@@ -26,7 +26,8 @@ export default {
     },
     methods:{ 
         setState(to){
-            this.data = contentData[to.params.id].content
+            this.data = contentData.find(item => item.id == to.params.id);
+            //contentData[to.params.id].content
         }
     }
 }
