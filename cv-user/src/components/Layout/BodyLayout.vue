@@ -11,7 +11,7 @@
         </column>
 
         <column :xs="12" :lg="7">
-          <RouterView />
+          <RouterView :key="$route.path"/>
         </column>
     
       </row>
