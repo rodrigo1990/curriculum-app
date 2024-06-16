@@ -1,7 +1,7 @@
 export const ContentData = [
-                {id:1, content:['<p> I am a developer from Argentina, I like PHP etc. </p>']},
-                {id:2, content:['<p> Section 2 </p>']},
-                {id:3, content:['<p> Section 3 </p>']},
-                {id:4, content:['<p> Section 4 </p>']},
+                {id:1, content:['<h1>Whoami!</h1>']},
+                {id:2, content:['<h1> Academics </h1>']},
+                {id:3, content:['<h1> Services </h1>']},
+                {id:4, content:['<h1> GitHub </h1>']},
                 {id:5, content:['<p> <h1>Call me! </h1></p>']},
 ];
