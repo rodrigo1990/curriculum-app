@@ -1,7 +1,7 @@
 <template>
     <div class="my-container" style="padding-left: 1px;width: 100%;">
         <div style="width: 100%;">
-            <div class="content" v-for="(item, index) in content" :key="index">
+            <div class="content" v-for="(item, index) in this.data" :key="index">
                 <div v-html="item"></div>
             </div>
         </div>
@@ -11,11 +11,13 @@
 <script>
 export default {
     name:"Content",
-    props: {
-        content:{
-            required:true,
-            type:String
+    data(){
+        return{
+            data: null
         }
+    },
+    mounted(){
+        this.data = ['<p> I am a developer from Argentina, I like PHP etc. </p>']
     }
 }
 </script>
