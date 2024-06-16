@@ -1,6 +1,7 @@
 <template>
     <div class="my-container" style="padding-left: 1px;width: 100%;">
         <div style="width: 100%;">
+            <strong style="color:white;">Current content id: {{ $route.params.id }}</strong> 
             <div class="content" v-for="(item, index) in this.data" :key="index">
                 <div v-html="item"></div>
             </div>
