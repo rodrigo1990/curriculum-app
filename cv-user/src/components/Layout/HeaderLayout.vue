@@ -10,7 +10,7 @@
                 </column>
                 <column :xs="12" :md="4" :lg="3"></column>
                 <column v-for="(btn, index) in this.btnsHeaderData" :key="index" class="right" :md="4" :lg="3">
-                  <ButtonHeader :contentId="btn.id" :description="btn.description" /> 
+                  <ButtonHeader :contentId="btn.contentId" :description="btn.description" /> 
                 </column>
             </row>
           </div>
