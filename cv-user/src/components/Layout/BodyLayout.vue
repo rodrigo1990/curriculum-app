@@ -11,7 +11,7 @@
         </column>
 
         <column :xs="12" :lg="7">
-          <Content />
+          <Content :content="['<p> I am a developer from Argentina, I like PHP etc. </p>']"/>
         </column>
     
       </row>
