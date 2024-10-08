@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RouterLink :to="`/content/${contentId}`" @mouseover="animateLine" @mouseleave="unanimateLine">
+    <RouterLink :to="`/content/${contentId}`" @mouseenter="animateLine" @mouseleave="unanimateLine">
       {{ description }}
       <Transition>
         <div v-if="animate"  class="line"></div>
