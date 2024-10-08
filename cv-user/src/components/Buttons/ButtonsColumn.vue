@@ -1,7 +1,7 @@
 <template>
   <div class="buttons-column">
     <ul>
-      <li v-for="(item, index) in buttonsArray" :key="index">
+      <li v-for="(item) in buttonsArray" :key="item.id">
         <buttonColumn :contentId="item.contentId" :description="item.description"/>
       </li>
     </ul>
