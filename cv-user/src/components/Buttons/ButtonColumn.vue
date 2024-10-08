@@ -2,9 +2,6 @@
   <div>
     <RouterLink :to="`/content/${contentId}`" @mouseenter="animate = true" @mouseleave="animate = false">
       {{ description }}
-      <Transition>
-        <div v-if="animate"  class="line"></div>
-      </Transition>
     </RouterLink>
     
     
