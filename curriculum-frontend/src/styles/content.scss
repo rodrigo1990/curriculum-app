@@ -1,0 +1,31 @@
+.content{
+    color:white;
+    padding-top:2rem;
+    >div{
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+    }
+}
+
+.my-container{
+    height: 100%;
+    
+    >div {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            height: 100%;
+        }
+} 
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
