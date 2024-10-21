@@ -1,19 +1,18 @@
 <template>
   <div>
-    <RouterLink :to="`/content/${contentId}`" @mouseenter="animate = true" @mouseleave="animate = false">
+    <a>
+      <!-- <RouterLink :to="`/content/${contentId}`" class="btn">{{ description }}</RouterLink> -->
       {{ description }}
-    </RouterLink>
-    
+    </a>
     
   </div>
 </template>
 
 <script>
-import { RouterLink } from 'vue-router'
-
+import { RouterLink } from 'vue-router';
 export default {
-  name:'ButtonColumn',
-  props: {
+    name:'ButtonHeader',
+    props: {
       description: {
           type: String,
           required:true
@@ -26,15 +25,9 @@ export default {
   components:{
     RouterLink
   },
-  data() {
-    return {
-      animate:false
-    }
-  }
 }
 </script>
 
 <style scoped lang="scss">
-    @import "./src/styles/button-column.scss";
+    @import url("~/assets/styles/button-column.scss");
 </style>
-

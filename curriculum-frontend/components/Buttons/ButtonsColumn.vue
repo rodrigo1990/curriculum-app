@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ButtonColumn from './ButtonColumn.vue'
+import ButtonColumn from './ButtonColumn.vue';
 
 export default {
   name: 'ButtonsColumn',
@@ -27,5 +27,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    @import "./src/styles/buttons-column.scss";
+    @import url("~/assets/styles/buttons-column.scss");
 </style>
