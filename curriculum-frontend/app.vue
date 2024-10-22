@@ -7,7 +7,7 @@
       </div>
         
         <div class="col-xs-12 col-md-4">
-         <!--   <ProfileImage path="pic.jpg"/> -->
+              <ProfileImage path="pic.jpg"/>
         </div>
 
         <div class="col-xs-12 col-md-4">

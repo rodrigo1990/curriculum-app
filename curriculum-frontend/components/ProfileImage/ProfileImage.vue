@@ -16,12 +16,12 @@ export default {
     methods: {
     getImagePath(path) {
       // Concatenate the image path with the property value
-      return  require('@/assets/images/'+path);
+      return  '/assets/images/profile/'+path;
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-    @import "./src/styles/profile-image.scss";
+    @import url("~/assets/styles/profile-image.scss");
 </style>
