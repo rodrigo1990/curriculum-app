@@ -1,3 +1,3 @@
 <template>
-    content id: {{ $route.params.id }}
+    <Content />
 </template>
