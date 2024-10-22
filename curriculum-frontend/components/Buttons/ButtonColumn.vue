@@ -1,8 +1,7 @@
 <template>
   <div>
     <a>
-      <!-- <RouterLink :to="`/content/${contentId}`" class="btn">{{ description }}</RouterLink> -->
-      {{ description }}
+       <NuxtLink :to="`/content/${contentId}`" class="btn">{{ description }}</NuxtLink> 
     </a>
     
   </div>
