@@ -1,16 +1,16 @@
 <template>
-  <div class="row">
-    <div class="container">
+  <div class="container">
+    <div class="row">
         
-      <div class="col-xs-12 col-md-1 col-lg-1"> 
+      <div class="col-xs-12 col-lg-4"> 
           <ButtonsColumn :buttonsArray="this.btnsData"/>
       </div>
         
-        <div class="col-xs-12 col-lg-4">
+        <div class="col-xs-12 col-md-4">
          <!--   <ProfileImage path="pic.jpg"/> -->
         </div>
 
-        <div class="col-xs-12 col-lg-7">
+        <div class="col-xs-12 col-md-4">
           <NuxtLayout>
             <NuxtPage />
           </NuxtLayout>
