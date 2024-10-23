@@ -1,17 +1,19 @@
 <template>
-  <div class="row">
-    <div class="container">
+  <div class="container-fluid">
+    <div class="row">
         
-      <div class="col-xs-12 col-md-1 col-lg-1"> 
-          <ButtonsColumn :buttonsArray="this.btnsData"/>
-      </div>
+      <div class="col-xs-12 col-md-4 col-lg-2"> 
+          <ClientOnly>
+            <ButtonsColumn :buttonsArray="this.btnsData"/>
+          </ClientOnly>
+        </div>
         
-        <div class="col-xs-12 col-lg-4">
-         <!--   <ProfileImage path="pic.jpg"/> -->
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <ProfileImage path="pic.jpg"/>
         </div>
 
-        <div class="col-xs-12 col-lg-7">
-          <RouterView :key="$route.path"/>
+        <div class="col-xs-12 col-md-4 col-lg-6">
+          <slot />
         </div>
       </div>
   </div>
@@ -21,7 +23,6 @@
 import { RouterView } from 'vue-router';
 import { BtnsBodyData } from '~/src/dummyData/BtnsBodyData';
 export default {
-    name: 'BodyMain',
     data(){
       return {
           btnsData:BtnsBodyData

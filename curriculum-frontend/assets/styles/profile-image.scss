@@ -1,5 +1,4 @@
 .profile-img {
-    //background-image: url('@/assets/images/pic.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,13 +11,15 @@
 
 .profile-img:after {
     content: " ";
+    margin: auto;
     background-color: transparent;
     border: 2px solid #CC5F00;
     position: absolute;
     height: 30rem;
-    width: 20rem;
-    left: 9rem;
-    top: 2.5rem;
+    width: 19rem;
+    left: auto;
+    right: auto;
+    /* top: 2.5rem; */
     border-radius: 13px;
     z-index: -1;
 }
