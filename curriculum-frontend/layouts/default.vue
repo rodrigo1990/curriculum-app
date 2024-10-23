@@ -3,19 +3,19 @@
     <div class="row">
         
       <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ClientOnly>
+          <ClientOnly fallback-tag="span" fallback="Loading buttons...">
             <ButtonsColumn :buttonsArray="this.btnsData"/>
           </ClientOnly>
-        </div>
-        
-        <div class="col-xs-12 col-md-4 col-lg-4">
-          <ProfileImage path="pic.jpg"/>
-        </div>
-
-        <div class="col-xs-12 col-md-4 col-lg-6">
-          <slot />
-        </div>
       </div>
+        
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <ProfileImage path="pic.jpg"/>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-lg-6">
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
 
