@@ -21,9 +21,6 @@ export default {
             data: null
         }
     },
-    async beforeRouteUpdate(to) {
-        this.setState(to)
-    },
     mounted(){
         this.setState(this.$route)
     },
