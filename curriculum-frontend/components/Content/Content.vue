@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import { ContentData } from '~/src/dummyData/ContentData';
 export default {
     name:"Content",
     data(){
@@ -30,8 +29,9 @@ export default {
     },
     methods:{ 
         setState(to){
-            this.data = ContentData.find(item => item.id == to.params.id).content;
-            //contentData[to.params.id].content
+            getContent(to.params.id).then((response) => {
+                this.data = response.data.content
+            })
         }
     }
 }
