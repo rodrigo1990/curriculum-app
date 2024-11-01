@@ -1,11 +1,10 @@
 <template>
   <div class="container-fluid">
+            {{ btnsData }}
+
     <div class="row">
-        
       <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ClientOnly fallback-tag="span" fallback="Loading buttons...">
-            <ButtonsColumn :buttonsArray="this.btnsData"/>
-          </ClientOnly>
+          <ButtonsColumn :buttonsArray="btnsData"/>
       </div>
         
       <div class="col-xs-12 col-md-4 col-lg-4">
@@ -19,16 +18,17 @@
   </div>
 </template>
 
-<script>
-import { RouterView } from 'vue-router';
-import { BtnsBodyData } from '~/src/dummyData/BtnsBodyData';
-export default {
-    data(){
-      return {
-          btnsData:BtnsBodyData
-      }
-    },
-}
+<script setup>
+
+  const btnsData = ref(0)
+
+  const {data: buttonsBody, pending} = await useAsyncData("buttonsBody", () =>
+      $fetch('/api/buttonsBody')
+  )
+  console.log(buttonsBody.value.response)
+
+  btnsData.value = buttonsBody.value.response
+
 </script>
 
 <style scoped lang="scss">
