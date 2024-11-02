@@ -26,14 +26,8 @@ onMounted(() => {
 })
 
 async function setState(to){
-    data.value = await getData(to.params.id)
-}
-
-async function  getData(id){
- const {data: getContent, pending} = await useAsyncData("getContent", () =>
-      $fetch('/api/content/'+id)
-  )
-  return getContent.value.response
+    const {data: getContent, pending} = await useFetch('/api/content/'+to.params.id)
+    data.value = getContent.value.response
 }
 
 </script>

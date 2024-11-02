@@ -2,7 +2,7 @@
   <div class="buttons-column">
     <ul>
       <li v-for="(item) in buttonsArray" :key="item.id">
-        <buttonColumn :contentId="item.contentId" :description="item.description"/>
+        <ButtonColumn :contentId="item.contentId" :description="item.description"/>
       </li>
     </ul>
   </div>

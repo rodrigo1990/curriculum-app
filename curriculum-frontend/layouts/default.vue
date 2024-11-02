@@ -35,9 +35,7 @@
 
   const btnsData = ref(0)
   //Buttons body
-  const {data: buttonsBody, pendingBtnsBody} = await useAsyncData("buttonsBody", () =>
-      $fetch('/api/buttonsBody')
-  )
+  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/buttonsBody')
   console.log(buttonsBody.value.response)
 
   btnsData.value = buttonsBody.value.response
@@ -46,9 +44,7 @@
   //Buttons header
   const btnsHeaderData = ref(null)
   
-  const {data: buttonsHeader, pendingBtnsHeader} = await useAsyncData("buttonsHeader", () =>
-      $fetch('/api/buttonsHeader')
-  )
+  const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/buttonsHeader')
 
   btnsHeaderData.value = buttonsHeader.value.response
   
