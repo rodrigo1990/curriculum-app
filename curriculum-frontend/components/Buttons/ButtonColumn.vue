@@ -1,9 +1,6 @@
 <template>
   <div>
-    <a>
-       <NuxtLink :to="`/content/${contentId}`" class="btn">{{ description }}</NuxtLink> 
-    </a>
-    
+    <NuxtLink :to="`/content/${contentId}`" class="btn">{{ description }}</NuxtLink>     
   </div>
 </template>
 
