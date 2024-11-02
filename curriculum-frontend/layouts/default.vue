@@ -31,7 +31,9 @@
 
 </script>
 
+<style lang="scss">
+  @import url("~/assets/styles/app.scss");
+</style>
 <style scoped lang="scss">
-    @import url("~/assets/styles/app.scss");
-    @import url("~/assets/styles/body-layout.scss");
+  @import url("~/assets/styles/body-layout.scss");
 </style>
