@@ -3,37 +3,34 @@
         <div style="width: 100%;">
             <strong style="color:white;">Current content id: {{ $route.params.id }}</strong> 
 
-            <ClientOnly fallback-tag="span" fallback="Loading content...">
-                <div class="content" v-for="(item, index) in this.data" :key="index">
+                <div class="content" v-for="(item, index) in data" :key="index">
                     <div v-html="item"></div>
                 </div>
-            </ClientOnly>
             
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    name:"Content",
-    data(){
-        return{
-            data: null
-        }
-    },
-    mounted(){
-        this.setState(this.$route)
-    },
-    methods:{ 
-        setState(to){
-            getContent(to.params.id).then((response) => {
-                this.data = response.data.content
-            })
-        }
-    }
+
+<script setup>
+const data = ref(null)
+const route = useRoute()
+
+onMounted(() => {
+    
+    setState(route)
+})
+
+function setState(to){
+    console.log('setState')
+    console.log(route.params)
+    getContent(to.params.id).then((response) => {
+        data.value = response.data.content
+        console.log('getContent...')
+        console.log(data.value)
+    })
 }
 </script>
-
 <style scoped lang="scss">
     @import url("~/assets/styles/content.scss");
 </style>
