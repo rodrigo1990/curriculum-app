@@ -14,9 +14,9 @@
 
 <script setup>
 
-const data = ref(null)
 const route = useRoute()
-
+const {data: getContent, pendingBtnsBody} = await useFetch('/api/content/'+route.params.id)
+const data = ref(getContent.value.response)
 
 onBeforeMount (() => {
     setState(route)
