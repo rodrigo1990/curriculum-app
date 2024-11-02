@@ -16,20 +16,26 @@
 const data = ref(null)
 const route = useRoute()
 
+
+onBeforeMount (() => {
+    setState(route)
+})
 onMounted(() => {
-    
     setState(route)
 })
 
-function setState(to){
-    console.log('setState')
-    console.log(route.params)
-    getContent(to.params.id).then((response) => {
-        data.value = response.data.content
-        console.log('getContent...')
-        console.log(data.value)
-    })
+async function setState(to){
+    data.value = await getData(to.params.id)
 }
+
+async function  getData(id){
+ const {data: getContent, pending} = await useAsyncData("getContent", () =>
+      $fetch('/api/content/'+id)
+  )
+  return getContent.value.response
+}
+
+
 </script>
 <style scoped lang="scss">
     @import url("~/assets/styles/content.scss");
