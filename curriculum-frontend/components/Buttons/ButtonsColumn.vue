@@ -1,24 +1,23 @@
 <template>
   <div class="buttons-column">
     <ul>
-      <ClientOnly fallback-tag="span" fallback="Loading comments...">
         <li v-for="(item) in buttonsArray" :key="item.id">
           <ButtonColumn :contentId="item.contentId" :description="item.description"/>
         </li>
-      </ClientOnly>
     </ul>
   </div>
 </template>
 
 <script setup>
 import ButtonColumn from './ButtonColumn.vue';
-defineProps({
+const props = defineProps({
   msg: String,
-  buttonsArray: {
+  buttonsArrayProp: {
     type: Array,
     required: true
   }
 })
+const buttonsArray = ref(props.buttonsArrayProp)
 </script>
 
 <style scoped lang="scss">

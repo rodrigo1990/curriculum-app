@@ -14,11 +14,10 @@
       </div>
     </div>
   </div>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ButtonsColumn :buttonsArray="btnsData"/>
+          <ButtonsColumn :buttonsArrayProp="btnsData"/>
       </div>
       <div class="col-xs-12 col-md-4 col-lg-4">
         <ProfileImage path="pic.jpg"/>
@@ -33,20 +32,15 @@
 
 <script setup>
 
-  const btnsData = ref(0)
+
   //Buttons body
   const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/buttonsBody')
-  console.log(buttonsBody.value.response)
-
-  btnsData.value = buttonsBody.value.response
+  const btnsData = ref(buttonsBody.value.response)
 
 
   //Buttons header
-  const btnsHeaderData = ref(null)
-  
   const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/buttonsHeader')
-
-  btnsHeaderData.value = buttonsHeader.value.response
+  const btnsHeaderData = ref(buttonsHeader.value.response)
   
 
 </script>
