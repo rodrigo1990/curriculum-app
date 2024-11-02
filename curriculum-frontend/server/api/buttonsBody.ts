@@ -5,8 +5,8 @@ let data = [
       {id: 3,description: 'Github',  contentId:4},
   ];
 
-export default async () => {
-    let response = await new Promise((resolve) => {
+export default defineEventHandler (async () => {
+    let response =  await new Promise((resolve) => {
         setTimeout(() => {
             resolve(data)
         },1000);
@@ -14,4 +14,4 @@ export default async () => {
     return {
         response
     }
-}
+})
