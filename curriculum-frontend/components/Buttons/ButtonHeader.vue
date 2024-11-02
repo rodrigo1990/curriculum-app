@@ -4,20 +4,17 @@
     </div>
 </template>
 
-<script>
-export default {
-    name:'ButtonHeader',
-    props: {
-      description: {
-          type: String,
-          required:true
-      },
-      contentId:{
-        type:Number,
-        required:true
-      }
+<script setup>
+defineProps({
+  description: {
+    type: String,
+    required:true
   },
-}
+  contentId:{
+    type:Number,
+    required:true
+  }
+})
 </script>
 
 <style scoped lang="scss">
