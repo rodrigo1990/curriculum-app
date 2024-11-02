@@ -7,12 +7,9 @@
   </div>
 </template>
 
-<script>
-import { RouterLink } from 'vue-router';
-export default {
-    name:'ButtonHeader',
-    props: {
-      description: {
+<script setup>
+defineProps({
+  description: {
           type: String,
           required:true
       },
@@ -20,11 +17,7 @@ export default {
         type:Number,
         required:true
       }
-  },
-  components:{
-    RouterLink
-  },
-}
+})
 </script>
 
 <style scoped lang="scss">
