@@ -32,7 +32,6 @@
 </template>
 
 <script setup>
-  import ButtonHeader from '../components/Buttons/ButtonHeader.vue';
 
   const btnsData = ref(0)
   //Buttons body
