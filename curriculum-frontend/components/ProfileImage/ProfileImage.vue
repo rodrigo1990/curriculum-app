@@ -4,22 +4,18 @@
   </div>
 </template>
 
-<script>
-export default {
-    name: 'ProfileImage',
-    props:{
-      path:{
+<script setup>
+  defineProps({
+    path:{
         required:true,
         type:String
       }
-    },
-    methods: {
-    getImagePath(path) {
+  })
+
+  function getImagePath(path) {
       // Concatenate the image path with the property value
       return  '/assets/images/profile/'+path;
-    }
   }
-}
 </script>
 
 <style scoped lang="scss">
