@@ -1,4 +1,20 @@
 <template>
+<div>
+  <div class="container">
+    <div class="header">
+      <div class="row">
+          <div class="col-lg-3"> 
+              <!--  <ButtonHeader :contentId="btnsHeaderData[0].id" description="This is a logo" />-->
+              <ButtonHeader :contentId="btnsHeaderData[0].id" description="this is a logo" />
+          </div>
+          <div class="col-lg=3"></div>
+          <div class="col-lg-3" v-for="(btn, index) in btnsHeaderData" :key="index">
+            <ButtonHeader :contentId="btn.contentId" :description="btn.description" /> 
+          </div> 
+      </div>
+    </div>
+  </div>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 col-md-4 col-lg-2"> 
@@ -12,18 +28,31 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
+  import ButtonHeader from '../components/Buttons/ButtonHeader.vue';
 
   const btnsData = ref(0)
-
-  const {data: buttonsBody, pending} = await useAsyncData("buttonsBody", () =>
+  //Buttons body
+  const {data: buttonsBody, pendingBtnsBody} = await useAsyncData("buttonsBody", () =>
       $fetch('/api/buttonsBody')
   )
   console.log(buttonsBody.value.response)
 
   btnsData.value = buttonsBody.value.response
+
+
+  //Buttons header
+  const btnsHeaderData = ref(null)
+  
+  const {data: buttonsHeader, pendingBtnsHeader} = await useAsyncData("buttonsHeader", () =>
+      $fetch('/api/buttonsHeader')
+  )
+
+  btnsHeaderData.value = buttonsHeader.value.response
+  
 
 </script>
 
