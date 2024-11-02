@@ -26,8 +26,8 @@ onMounted(() => {
 })
 
 async function setState(to){
-    const {data: getContent, pending} = await useFetch('/api/content/'+to.params.id)
-    data.value = getContent.value.response
+    const getContent = await $fetch('/api/content/'+to.params.id)
+    data.value = getContent.response
 }
 
 </script>
