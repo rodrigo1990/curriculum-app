@@ -32,5 +32,6 @@
 </script>
 
 <style scoped lang="scss">
+    @import url("~/assets/styles/app.scss");
     @import url("~/assets/styles/body-layout.scss");
 </style>
