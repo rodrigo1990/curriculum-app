@@ -6,7 +6,8 @@
     width: 20rem;
     height: 30rem;
     margin: auto;
-    position:relative
+    position:relative;
+    animation: fadeIn 1.5s;
 }
 
 .profile-img:after {
@@ -22,4 +23,15 @@
     top: 2rem;
     border-radius: 13px;
     z-index: -1;
+    animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
