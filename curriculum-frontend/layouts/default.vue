@@ -8,8 +8,8 @@
               <ButtonHeader :contentId="btnsHeaderData[0].id" description="this is a logo" />
           </div>
           <div class="col-lg=3"></div>
-          <div class="col-lg-3" v-for="(btn, index) in btnsHeaderData" :key="index">
-            <ButtonHeader :contentId="btn.contentId" :description="btn.description" /> 
+          <div class="col-lg-3">
+            <ButtonsListHeader :btns="btnsHeaderData"/>
           </div> 
       </div>
     </div>
