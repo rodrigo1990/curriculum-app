@@ -19,7 +19,7 @@ const props = defineProps({
 })
 const buttonsArray = ref(props.btns)
 </script>
-<style scoped>
+<style scoped lang="scss">
     ul{
         width: 100%;
         display:block;
@@ -27,5 +27,8 @@ const buttonsArray = ref(props.btns)
         display:flex;
         flex-direction: row;
         justify-content: right;
+        li:not(:last-child){
+            margin-right:15rem;
+        }
     }
 </style>
