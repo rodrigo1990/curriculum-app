@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
     "nuxt": "^3.13.0",
     "sass": "^1.80.2",
     "sass-loader": "^16.0.2",

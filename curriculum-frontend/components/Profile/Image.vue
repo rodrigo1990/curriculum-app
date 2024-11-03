@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-img-container">
+  <div class="profile-img-container animate__animated animate__fadeIn">
     
         <ClientOnly>
           <div class="profile-img" :style="{ 'background-image': 'url('+getImagePath(path)+'' }"> </div>

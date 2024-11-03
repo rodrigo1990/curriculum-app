@@ -7,7 +7,10 @@ export default defineNuxtConfig({
     },
   ],*/
   modules: ['@bootstrap-vue-next/nuxt'],
-  css: ['bootstrap/dist/css/bootstrap.min.css'],
+  css: [
+    'animate.css/animate.min.css',
+    'bootstrap/dist/css/bootstrap.min.css',
+  ],
   vite:{
     css: {
       preprocessorOptions: {
