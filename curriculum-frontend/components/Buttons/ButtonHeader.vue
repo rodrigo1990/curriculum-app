@@ -1,10 +1,11 @@
 <template>
     <div>
-      <NuxtLink :to="`/content/${contentId}`" class="btn">{{ description }}</NuxtLink> 
+      <NuxtLink :to="`/${route.params.user}/content/${contentId}`" class="btn">{{ description }}</NuxtLink> 
     </div>
 </template>
 
 <script setup>
+const route = useRoute()
 defineProps({
   description: {
     type: String,
