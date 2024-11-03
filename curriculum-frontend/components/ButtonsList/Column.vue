@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import ButtonColumn from './ButtonColumn.vue';
+//import ButtonColumn from './ButtonColumn.vue';
 const props = defineProps({
   msg: String,
   buttonsArrayProp: {
