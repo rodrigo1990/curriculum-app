@@ -14,10 +14,6 @@
 
 <script setup>
 const route = useRoute()
-
-if(route.params.id == null)
-    navigateTo('/'+route.params.user+'/content/1')
-
 const {data: getContent, pendingBtnsBody} = await useFetch('/api/content/'+route.params.id)
 const data = ref(getContent.value.response)
 
