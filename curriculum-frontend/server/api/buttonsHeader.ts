@@ -7,7 +7,7 @@ export default defineEventHandler (async () => {
     let response =  await new Promise((resolve) => {
         setTimeout(() => {
             resolve(data)
-        },1000);
+        },0);
     })
     return {
         response

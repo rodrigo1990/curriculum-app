@@ -13,22 +13,9 @@
 
 
 <script setup>
-const route = useRoute()
-const {data: getContent, pendingBtnsBody} = await useFetch('/api/content/'+route.params.id)
-const data = ref(getContent.value.response)
-
-onBeforeMount (() => {
-    setState(route)
-})
-onMounted(() => {
-    setState(route)
-})
-
-async function setState(to){
-    const getContent = await $fetch('/api/content/'+to.params.id)
-    data.value = getContent.response
-}
-
+    const route = useRoute()
+    const {data: getContent, pendingBtnsBody} = await useFetch('/api/content/'+route.params.id)
+    const data = ref(getContent.value.response)
 </script>
 
 <style scoped lang="scss">
