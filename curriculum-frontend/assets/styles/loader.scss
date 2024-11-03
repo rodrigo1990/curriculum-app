@@ -5,7 +5,6 @@
     aspect-ratio: 1;
     border-radius: 50%;
     background: #cc5f00a1;
-    -webkit-mask: repeating-conic-gradient(rgba(0, 0, 0, 0) 0deg, #000 1deg 70deg, rgba(0, 0, 0, 0) 71deg 90deg), radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
     -webkit-mask-composite: destination-in;
     mask-composite: intersect;
     animation: l5-0e34be81 1s infinite;
