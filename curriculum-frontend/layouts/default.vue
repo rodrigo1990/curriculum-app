@@ -1,6 +1,6 @@
 <template>
 <div>
-  <HeaderMain :btns="btnsHeaderData"/>
+  <HeaderMain/>
   <section id="body">
     <div class="container-fluid">
       <div class="row">
