@@ -1,6 +1,8 @@
 <template>
-  <div class="profile-img-container">
-        <div class="profile-img" :style="{ 'background-image': 'url('+getImagePath(path)+'' }"> </div>
+  <div class="profile-img-container" fallback-tag="span" fallback="Loading...">
+        <ClientOnly>
+          <div class="profile-img" :style="{ 'background-image': 'url('+getImagePath(path)+'' }"> </div>
+        </ClientOnly>
   </div>
 </template>
 
@@ -14,7 +16,7 @@
 
   function getImagePath(path) {
       // Concatenate the image path with the property value
-      return  '/assets/images/profile/'+path;
+      return  "/images/user/profile/pic.jpg";
   }
 </script>
 
