@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="global-wrapper">
   <HeaderMain/>
   <section id="body">
     <div class="container-fluid">
