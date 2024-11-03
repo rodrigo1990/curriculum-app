@@ -1,32 +1,35 @@
 <template>
 <div>
-  <div class="container">
-    <div class="header">
+  <section id="header">
+    <div class="container-fluid">
+      <div class="header">
+        <div class="row">
+            <div class="col-lg-6"> 
+                <!--  <ButtonHeader :contentId="btnsHeaderData[0].id" description="This is a logo" />-->
+                <ButtonHeader :contentId="btnsHeaderData[0].id" description="this is a logo" />
+            </div>
+            <div class="col-lg-6">
+              <ButtonsListHeader :btns="btnsHeaderData"/>
+            </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="body">
+    <div class="container-fluid">
       <div class="row">
-          <div class="col-lg-3"> 
-              <!--  <ButtonHeader :contentId="btnsHeaderData[0].id" description="This is a logo" />-->
-              <ButtonHeader :contentId="btnsHeaderData[0].id" description="this is a logo" />
-          </div>
-          <div class="col-lg=3"></div>
-          <div class="col-lg-3">
-            <ButtonsListHeader :btns="btnsHeaderData"/>
-          </div> 
+        <div class="col-xs-12 col-md-4 col-lg-2"> 
+            <ButtonsListColumn :buttonsArrayProp="btnsData"/>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <ProfileImage path="pic.jpg"/>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-6">
+          <slot />
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ButtonsListColumn :buttonsArrayProp="btnsData"/>
-      </div>
-      <div class="col-xs-12 col-md-4 col-lg-4">
-        <ProfileImage path="pic.jpg"/>
-      </div>
-      <div class="col-xs-12 col-md-4 col-lg-6">
-        <slot />
-      </div>
-    </div>
-  </div>
+  </section>
 </div>
 </template>
 
@@ -59,4 +62,10 @@
 </style>
 <style scoped lang="scss">
   @import url("~/assets/styles/body-layout.scss");
+  section#body{
+    margin-top:6rem;
+  }
+  section#header{
+    margin-top:1.5rem
+  }
 </style>

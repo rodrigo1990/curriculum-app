@@ -19,3 +19,13 @@ const props = defineProps({
 })
 const buttonsArray = ref(props.btns)
 </script>
+<style scoped>
+    ul{
+        width: 100%;
+        display:block;
+        float:right;
+        display:flex;
+        flex-direction: row;
+        justify-content: right;
+    }
+</style>
