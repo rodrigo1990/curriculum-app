@@ -20,18 +20,8 @@
 </template>
 
 <script setup>
-
-
-  //Buttons body
   const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/buttonsBody')
   const btnsData = ref(buttonsBody.value.response)
-
-
-  //Buttons header
-  const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/buttonsHeader')
-  const btnsHeaderData = ref(buttonsHeader.value.response)
-  
-
 </script>
 
 <style lang="scss">

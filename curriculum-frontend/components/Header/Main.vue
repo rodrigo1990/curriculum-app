@@ -17,11 +17,6 @@
 </template>
 
 <script setup>
-    const props = defineProps({
-        btns:{
-            type:Array,
-            required:true
-        }
-    })
-    const btnsState = ref(props.btns)
+    const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/buttonsHeader')
+    const btnsState = ref(buttonsHeader.value.response)
 </script>
