@@ -1,5 +1,3 @@
 <template>
-    <NuxtLayout>
-        <ContentMain />
-    </NuxtLayout>
+    <ContentMain />
 </template>

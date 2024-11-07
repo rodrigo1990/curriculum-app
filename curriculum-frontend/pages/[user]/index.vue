@@ -1,6 +1,5 @@
 <template>
-    <NuxtLayout>
-    </NuxtLayout>
+    <div></div>
 </template>
 <script setup>
 const route = useRoute()
