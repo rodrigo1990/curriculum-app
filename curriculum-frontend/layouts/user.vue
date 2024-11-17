@@ -8,7 +8,7 @@
           <ButtonsListColumn />
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
-          <ProfileImage path="pic.jpg"/>
+          <ProfileImage />
         </div>
         <div class="col-xs-12 col-md-4 col-lg-6">
           <slot />

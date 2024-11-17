@@ -2,7 +2,7 @@
   <div class="profile-img-container animate__animated animate__fadeIn">
     
         <ClientOnly>
-          <div class="profile-img" :style="{ 'background-image': 'url('+getImagePath(path)+'' }"> </div>
+          <div class="profile-img" :style="{ 'background-image': 'url('+imgState.path+'' }"> </div>
           <template #fallback>
             <!-- this will be rendered on server side -->
               <span class="loader"></span>>
@@ -12,17 +12,8 @@
 </template>
 
 <script setup>
-  defineProps({
-    path:{
-        required:true,
-        type:String
-      }
-  })
-
-  function getImagePath(path) {
-      // Concatenate the image path with the property value
-      return  "/images/user/profile/pic.jpg";
-  }
+  const {data: img, pendingSite} = await useFetch('/api/dummy/profileImg')
+  const imgState = ref(img.value.response)
 </script>
 
 <style scoped lang="scss">
