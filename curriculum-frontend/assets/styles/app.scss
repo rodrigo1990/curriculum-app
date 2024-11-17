@@ -1,5 +1,15 @@
+  @font-face {
+      font-family: 'Roboto-Thin';
+      src: url('/fonts/Roboto-Thin.ttf') format('truetype');
+  }
+  
   .row > *{
     position:relative;
+  }
+
+  a {
+      position: relative;
+      text-decoration: none;
   }
   
   @media screen and (min-width: 1600px) {

@@ -53,7 +53,8 @@ if(afterLineBackground == null && afterLineBackground != '')
 </script>
 
 <style scoped lang="scss">
-  @import url("~/assets/styles/button-column.scss");
+  @import url("~/assets/styles/buttons/afterLine.scss");
+  
   a {
     font-family: v-bind(fontFamily);
     color: v-bind(color);

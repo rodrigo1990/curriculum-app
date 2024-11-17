@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'Roboto-Thin';
-    src: url('/fonts/Roboto-Thin.ttf') format('truetype');
-}
-
-.afterLine{
+.afterLine {
     &::after {
         transition: width 0.4s ease;
         content: '';
@@ -18,9 +13,4 @@
     &:hover::after {
         width: 100%;
     }
-}
-
-a {
-    position: relative;
-    text-decoration: none;
 }
