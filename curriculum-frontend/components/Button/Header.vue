@@ -45,7 +45,7 @@ if(afterSquareBackground == null && afterSquareBackground != '')
 </script>
 
 <style scoped lang="scss">
-  @import url("~/assets/styles/buttons-header.scss");
+  @import url("~/assets/styles/buttons/afterSquare.scss");
   a {
     font-family: v-bind(fontFamily);
     color: v-bind(color);
