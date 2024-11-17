@@ -15,15 +15,8 @@
 </template>
 
 <script setup>
-//import ButtonColumn from './ButtonColumn.vue';
-const props = defineProps({
-  msg: String,
-  buttonsArrayProp: {
-    type: Array,
-    required: true
-  }
-})
-const buttonsArray = ref(props.buttonsArrayProp)
+  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/dummy/buttonsBody')
+  const buttonsArray = ref(buttonsBody.value.response)
 </script>
 
 <style scoped lang="scss">

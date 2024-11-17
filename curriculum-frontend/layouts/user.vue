@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-4 col-lg-2"> 
-            <ButtonsListColumn :buttonsArrayProp="btnsData"/>
+          <ButtonsListColumn />
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
           <ProfileImage path="pic.jpg"/>
@@ -20,9 +20,7 @@
 </template>
 
 <script setup>
-  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/dummy/buttonsBody')
   const {data: site, pendingSite} = await useFetch('/api/dummy/site')
-  const btnsData = ref(buttonsBody.value.response)
   const backgroundColor = ref(site.value.response.styles)
   useHead({
     style: [
