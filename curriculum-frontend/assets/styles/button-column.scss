@@ -3,23 +3,15 @@
     src: url('/fonts/Roboto-Thin.ttf') format('truetype');
 }
 
-a {
-    position: relative;
-    font-family: 'Roboto-Thin';
-    color: white;
-    font-size: 1.70rem;
-    text-decoration: none;
-
-    // Line that will be animated
+.afterLine{
     &::after {
+        transition: width 0.4s ease;
         content: '';
         position: absolute;
         left: 0;
         bottom: -5px;
         width: 0;
         height: 2px;
-        background-color: #CC5F00;
-        transition: width 0.4s ease;
     }
 
     // Hover effect
@@ -28,4 +20,7 @@ a {
     }
 }
 
-// Line that will be animated
+a {
+    position: relative;
+    text-decoration: none;
+}
