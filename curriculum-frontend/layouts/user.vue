@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/buttonsBody')
+  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/dummy/buttonsBody')
   const btnsData = ref(buttonsBody.value.response)
   const backgroundColor = `background: rgb(74, 34, 0);
             background: linear-gradient(164deg, rgba(74, 34, 0, 1) 0%, rgba(10, 10, 12, 1) 50%);

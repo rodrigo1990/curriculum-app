@@ -17,6 +17,6 @@
 </template>
 
 <script setup>
-    const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/buttonsHeader')
+    const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/dummy/buttonsHeader')
     const btnsState = ref(buttonsHeader.value.response)
 </script>

@@ -14,7 +14,7 @@
 
 <script setup>
     const route = useRoute()
-    const {data: getContent, pendingBtnsBody} = await useFetch('/api/content/'+route.params.id)
+    const {data: getContent, pendingBtnsBody} = await useFetch('/api/dummy/content/'+route.params.id)
     const data = ref(getContent.value.response)
 </script>
 
