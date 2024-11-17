@@ -2,7 +2,11 @@
   <div class="buttons-header">
     <ul>
         <li v-for="(btn, index) in buttonsArray" :key="index">
-          <ButtonHeader :contentId="btn.contentId" :description="btn.description" /> 
+          <ButtonHeader :contentId="btn.contentId" 
+          :description="btn.description"
+          :class="btn.class"
+          :styles="btn.styles"
+          /> 
         </li>
     </ul>
   </div>
