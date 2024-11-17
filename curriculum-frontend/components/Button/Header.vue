@@ -53,11 +53,6 @@ if(afterSquareBackground == null && afterSquareBackground != '')
   }
 
   .afterSquare{
-    &:after,
-    &:before {
-        border: 0px solid #fff;
-    }
-
     &:after {
         border-top: 1px solid v-bind(afterSquareBackground);
         border-left: 1px solid v-bind(afterSquareBackground);
