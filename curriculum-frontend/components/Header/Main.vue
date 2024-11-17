@@ -4,7 +4,6 @@
         <div class="header">
             <div class="row">
                 <div class="col-lg-6"> 
-                    <!--  <ButtonHeader :contentId="btnsHeaderData[0].id" description="This is a logo" />-->
                     <h1 style="color:white;">Logo</h1>
                 </div>
                 <div class="col-lg-6">
