@@ -21,17 +21,15 @@
 
 <script setup>
   const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/dummy/buttonsBody')
+  const {data: site, pendingSite} = await useFetch('/api/dummy/site')
   const btnsData = ref(buttonsBody.value.response)
-  const backgroundColor = `background: rgb(74, 34, 0);
-            background: linear-gradient(164deg, rgba(74, 34, 0, 1) 0%, rgba(10, 10, 12, 1) 50%);
-            background-repeat: no-repeat;
-            background-attachment: fixed;` 
+  const backgroundColor = ref(site.value.response.styles)
   useHead({
     style: [
       {
         children: `
           body {
-            ${backgroundColor}
+            ${backgroundColor.value}
           }
         `
       }
