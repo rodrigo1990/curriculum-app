@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SiteStyles;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-//        return phpinfo();
-        return xdebug_info();
+        $styles = SiteStyles::get();
+        return view('site_styles', [
+            'styles' => $styles
+        ]);
     }
 }
