@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\StdResource;
+use App\Interfaces\SiteServiceInterface;
 use App\Models\SiteStyles;
 use App\Services\SiteService;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function __construct(private SiteService $siteService)
+    public function __construct(private SiteServiceInterface $siteService)
     {
     }
 
