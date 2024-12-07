@@ -1,0 +1,16 @@
+.afterLine {
+    &::after {
+        transition: width 0.4s ease;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+    }
+
+    // Hover effect
+    &:hover::after {
+        width: 100%;
+    }
+}
