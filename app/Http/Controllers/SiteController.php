@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\StdResource;
 use App\Models\SiteStyles;
 use App\Services\SiteService;
 use Illuminate\Http\Request;
@@ -16,6 +17,6 @@ class SiteController extends Controller
     public function getSite()
     {
         $site = $this->siteService->getSite();
-        return view('site_styles', ['site' => $site]);
+        return new StdResource($site);
     }
 }
