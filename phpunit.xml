@@ -28,5 +28,6 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="DB_URI" value="mongodb+srv://rodrigoreynosowebdev:okVKt0CNE0C9vOPU@cluster0.lbgbp.mongodb.net/?retryWrites=trueamp;w=majorityamp;appName=Cluster0"/>
     </php>
 </phpunit>
