@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('button_header', function (Blueprint $table) {
-            $table->foreignId('button_id')->constrained('button');
+        Schema::create('buttons_header', function (Blueprint $table) {
+            $table->foreignId('button_id')->constrained('buttons');
             $table->unsignedBigInteger('header_id');
             $table->timestamps();
-            $table->foreign('header_id')->references('id')->on('header');
+            $table->foreign('header_id')->references('id')->on('headers');
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('button_header');
+        Schema::dropIfExists('buttons_header');
     }
 };

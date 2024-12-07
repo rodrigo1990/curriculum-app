@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('button', function (Blueprint $table) {
+        Schema::create('buttons', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('page_id');
             $table->timestamps();
-            $table->foreign('page_id')->references('id')->on('page');
+            $table->foreign('page_id')->references('id')->on('pages');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('button');
+        Schema::dropIfExists('buttons');
     }
 };
