@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         DB::table('users')->insert([
+            'id' => 1,
             'name' => 'Test User',
             'surname' => 'Reynoso',
             'username' => 'rodrigo1990',
@@ -36,7 +37,8 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('sites')->insert([
-            'name' => 'First site',
+            'id' => 1,
+            'name' => 'Testing site',
             'user_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
