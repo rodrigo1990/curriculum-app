@@ -13,7 +13,7 @@ class SiteService implements SiteServiceInterface {
 
     public function getSite(int $id){
         $site =  $this->siteRepository->getSite($id);
-        $styles = $this->siteMongoRepository->getSiteMongo($id);
+        $styles = $this->siteMongoRepository->getSite($id);
         $site->styles = $styles;
         $site = SiteDto::from($site);
         return $site;
