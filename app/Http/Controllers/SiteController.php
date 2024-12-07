@@ -17,6 +17,9 @@ class SiteController extends Controller
     public function getSite()
     {
         $site = $this->siteService->getSite();
-        return new StdResource($site);
+        if($site)
+            return new StdResource($site);
+        else
+            throw new \Exception('Site not found');
     }
 }
