@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface SiteServiceInterface
 {
-    public function getSite();
+    public function getSite(int $id);
 }

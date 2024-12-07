@@ -6,7 +6,7 @@ use App\Models\Site;
 
 class SiteRepository
 {
-    public function getSite(){
-        return Site::find(1);
+    public function getSite(int $id){
+        return Site::find($id);
     }
 }

@@ -14,9 +14,9 @@ class SiteController extends Controller
     {
     }
 
-    public function getSite()
+    public function getSite(Request $request)
     {
-        $site = $this->siteService->getSite();
+        $site = $this->siteService->getSite($request->id);
         if($site)
             return new StdResource($site);
         else

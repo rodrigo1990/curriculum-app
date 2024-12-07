@@ -8,7 +8,7 @@ class SiteService implements SiteServiceInterface {
     {
     }
 
-    public function getSite(){
-        return $this->siteRepository->getSite();
+    public function getSite(int $id){
+        return $this->siteRepository->getSite($id);
     }
 }

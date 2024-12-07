@@ -17,7 +17,7 @@ class RoutesTest extends TestCase
 
     public function test_main_api_returns_200_response(): void
     {
-        $response = $this->get('/api');
+        $response = $this->get('/api/site/1');
 
         $response->assertStatus(200);
     }

@@ -7,4 +7,4 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/', [\App\Http\Controllers\SiteController::class, 'getSite']);
+Route::get('/site/{id}', [\App\Http\Controllers\SiteController::class, 'getSite']);
