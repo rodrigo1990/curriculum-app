@@ -17,22 +17,26 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 'admin'
           MYSQL_DATABASE: 'testing'
-          MYSQL_ALLOW_EMPTY_PASSWORD: 1
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
         ports:
-          - 3306:3306
+          - 3306/tcp
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      strategy:
+        fail-fast: false
+        matrix:
+          php-versions: [ '7.4', '8.0', '8.1','8.2','8.3' ]
     steps:
       - uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
+          php-version:  ${{ matrix.php-versions }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, fileinfo, mysql
-          coverage: none
+          coverage: xdebug
 
       - name: Start mysql service
-        run: sudo /etc/init.d/mysql start
+        run: sudo systemctl start mysql.service
 
       - name: Run composer install
         run: composer install -n --prefer-dist
@@ -43,7 +47,11 @@ jobs:
           php artisan key:generate
 
       - name: Migrate database
-        run: php artisan migrate
+        run: php artisan migrate -v
+        env:
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
 
       - name: Run tests
         run: php artisan test
+        env:
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
