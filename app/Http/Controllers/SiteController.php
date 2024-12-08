@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function __construct(private SiteServiceInterface $siteService)
+    public function __construct(private SiteService $siteService)
     {
     }
 
