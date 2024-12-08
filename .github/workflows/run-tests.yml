@@ -8,19 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DB_DATABASE: testing
-      DB_USERNAME: root
+      DB_USERNAME: laravel
       DB_PASSWORD: admin
-      BROADCAST_DRIVER: log
-    services:
-      mysql:
-        image: mysql:latest
-        env:
-          MYSQL_ROOT_PASSWORD: 'admin'
-          MYSQL_DATABASE: 'testing'
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
-        ports:
-          - 3306/tcp
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     strategy:
       fail-fast: false
       matrix:
@@ -35,8 +24,10 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, fileinfo, mysql
           coverage: xdebug
 
-      - name: Start mysql service
-        run: sudo systemctl start mysql.service
+      - name: Start MySQL
+        run: |
+            sudo /etc/init.d/mysql start
+            mysql -e "CREATE DATABASE IF NOT EXISTS $DB_DATABASE;" -u$DB_USER -p$DB_PASSWORD
 
       - name: Run composer install
         run: composer install -n --prefer-dist
