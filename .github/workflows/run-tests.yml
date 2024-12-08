@@ -34,16 +34,19 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
           coverage: none
 
-      - name: Run composer install
-        run: composer install -n --prefer-dist
-
       - name: Start mysql service
         run: sudo /etc/init.d/mysql start
+
+      - name: Run composer install
+        run: composer install -n --prefer-dist
 
       - name: Prepare Laravel Application
         run: |
           cp .env.ci .env
           php artisan key:generate
+
+      - name: Migrate database
+        run: php artisan migrate
 
       - name: Run tests
         run: php artisan test
