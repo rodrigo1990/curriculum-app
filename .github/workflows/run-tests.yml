@@ -6,6 +6,24 @@ jobs:
   tests:
     name: Run tests
     runs-on: ubuntu-latest
+    env:
+      DB_DATABASE: testing
+      DB_USERNAME: laravel
+      DB_PASSWORD: admin
+      BROADCAST_DRIVER: log
+    services:
+      mysql:
+        image: 'mysql/mysql-server:8.0'
+        env:
+          MYSQL_ROOT_PASSWORD: 'admin'
+          MYSQL_ROOT_HOST: '%'
+          MYSQL_DATABASE: 'testing'
+          MYSQL_USER: 'laravel'
+          MYSQL_PASSWORD: 'admin'
+          MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        ports:
+          - 3306/tcp
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
 
@@ -18,6 +36,9 @@ jobs:
 
       - name: Run composer install
         run: composer install -n --prefer-dist
+
+      - name: Start mysql service
+        run: sudo /etc/init.d/mysql start
 
       - name: Prepare Laravel Application
         run: |
