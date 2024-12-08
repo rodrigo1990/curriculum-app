@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DB_DATABASE: testing
-      DB_USERNAME: laravel
-      DB_PASSWORD: admin
+      DB_USERNAME: root
+      DB_PASSWORD: root
     strategy:
       fail-fast: false
       matrix:
