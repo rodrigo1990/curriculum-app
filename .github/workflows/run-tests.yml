@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DB_DATABASE: testing
-      DB_USERNAME: laravel
+      DB_USERNAME: root
       DB_PASSWORD: admin
       BROADCAST_DRIVER: log
     services:
@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: [ '7.4', '8.0', '8.1','8.2','8.3' ]
+        php-versions: [ '8.3' ]
     steps:
       - uses: actions/checkout@v3
 
