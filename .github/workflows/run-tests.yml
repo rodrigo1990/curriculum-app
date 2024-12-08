@@ -16,7 +16,6 @@ jobs:
         image: 'mysql/mysql-server:8.0'
         env:
           MYSQL_ROOT_PASSWORD: 'admin'
-          MYSQL_ROOT_HOST: '%'
           MYSQL_DATABASE: 'testing'
           MYSQL_USER: 'laravel'
           MYSQL_PASSWORD: 'admin'
