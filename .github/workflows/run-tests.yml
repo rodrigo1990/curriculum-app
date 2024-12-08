@@ -17,8 +17,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 'admin'
           MYSQL_DATABASE: 'testing'
-          MYSQL_USER: 'laravel'
-          MYSQL_PASSWORD: 'admin'
           MYSQL_ALLOW_EMPTY_PASSWORD: 1
         ports:
           - 3306:3306
@@ -33,8 +31,8 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
           coverage: none
 
-      - name: Start mysql service
-        run: sudo /etc/init.d/mysql start
+#      - name: Start mysql service
+#        run: sudo /etc/init.d/mysql start
 
       - name: Run composer install
         run: composer install -n --prefer-dist
