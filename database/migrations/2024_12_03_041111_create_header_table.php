@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('header', function (Blueprint $table) {
+        Schema::create('headers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('site_id');
             $table->timestamps();
-            $table->foreign('site_id')->references('id')->on('site');
+            $table->foreign('site_id')->references('id')->on('sites');
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('header');
+        Schema::dropIfExists('headers');
     }
 };
