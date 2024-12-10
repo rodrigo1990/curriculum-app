@@ -19,6 +19,6 @@ class RoutesTest extends TestCase
     {
         $response = $this->get('/api/site/1');
 
-        $this->assertTrue(false);
+        $response->assertStatus(200);
     }
 }
