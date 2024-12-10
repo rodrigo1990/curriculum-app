@@ -42,10 +42,20 @@ return [
             'synchronous' => null,
         ],
 
+//        'mongodb' => [
+//            'driver' => 'mongodb',
+//            'dsn' => env('DB_URI'),
+//            'database' => 'curriculum_app',
+//        ],
+
+
         'mongodb' => [
             'driver' => 'mongodb',
-            'dsn' => env('DB_URI'),
-            'database' => 'curriculum_app',
+            'host' => env('MONGO_HOST'),
+            'port' => env('27017'),
+            'database' => env('MONGO_DB'),
+            'username' => env('MONGO_USER'),
+            'password' => env('MONGO_PASSWORD'),
         ],
 
         'mysql' => [
