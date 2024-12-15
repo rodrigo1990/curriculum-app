@@ -13,6 +13,7 @@ class RoutesTest extends TestCase
     protected function setUp(): void{
         parent::setUp();
         Artisan::call('db:seed');
+        Artisan::call('mongo:seed');
     }
 
     public function test_main_api_returns_200_response(): void

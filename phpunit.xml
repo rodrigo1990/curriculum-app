@@ -28,6 +28,9 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
-        <env name="DB_URI" value="mongodb+srv://rodrigoreynosowebdev:okVKt0CNE0C9vOPU@cluster0.lbgbp.mongodb.net/?retryWrites=true&amp;w=majority&amp;appName=Cluster0"/>
+        <env name="MONGO_URI" value="mongodb://root:example@mongo:27017/testing"/>
+        <env name="MONGO_DB" value="testing"/>
+        <env name="MONGO_USER" value="root"/>
+        <env name="MONGO_PASSWORD" value="example"/>
     </php>
 </phpunit>
