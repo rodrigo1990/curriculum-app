@@ -195,5 +195,33 @@ class DatabaseSeeder extends Seeder
                 'updated_at' => now(),
             ]
         ]);
+
+
+        DB::table('buttons_body')->insert([
+            [
+                'button_id' => 1,
+                'body_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'button_id' => 2,
+                'body_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'button_id' => 3,
+                'body_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'button_id' => 4,
+                'body_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 }
