@@ -3,7 +3,7 @@
 namespace App\ModelDtos;
 
 use App\Models\Site;
-use App\Models\SiteStyles;
+use App\Models\BodyStyles;
 use App\Models\User;
 use Carbon\Carbon;
 use Spatie\LaravelData\Data;
@@ -16,7 +16,7 @@ class SiteDto extends Data
         public int $userId,
         public Carbon $createdAt,
         public Carbon $updatedAt,
-        public SiteStyles $styles
+        public BodyStyles $styles
 
     ) {
     }

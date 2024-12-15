@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\SiteStyles;
+use App\Models\BodyStyles;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -27,8 +27,8 @@ class SeedDummyMongo extends Command
      */
     public function handle()
     {
-        config(['database.connections.mongodb.database' => 'testing']);
-        $site = new SiteStyles();
+        config(['database.connections.mongodb.database' => env('MONGO_DB')]);
+        $site = new BodyStyles();
         $n = DB::connection('mongodb')->getMongoDB()->dropCollection($site->getTable());
         $site->id = 1;
         $site->backgroundGradient = "background-color: red;";

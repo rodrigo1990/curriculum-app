@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Site;
-use App\Models\SiteStyles;
+use App\Models\BodyStyles;
 use App\Repositories\SiteRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
@@ -31,7 +31,7 @@ class DbTest extends TestCase
     public function test_db_seed_was_successful(): void
     {
         $site = Site::first();
-        $styles = SiteStyles::first();
+        $styles = BodyStyles::first();
         if($site && $styles)
             $this->assertTrue(true);
         else {
