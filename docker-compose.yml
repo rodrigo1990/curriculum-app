@@ -67,6 +67,7 @@ services:
             - type: volume
               source: sail-mongo
               target: /data/db
+            - './docker/mongo/init/init-db.sh:/docker-entrypoint-initdb.d/create-testing-mongo-db.sh'
     mongo-express:
         image: mongo-express
         ports:
