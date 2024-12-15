@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\SiteStyles;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class SeedDummyMongo extends Command
 {
@@ -12,7 +13,7 @@ class SeedDummyMongo extends Command
      *
      * @var string
      */
-    protected $signature = 'app:seed-dummy-mongo';
+    protected $signature = 'mongo:seed';
 
     /**
      * The console command description.
@@ -26,7 +27,9 @@ class SeedDummyMongo extends Command
      */
     public function handle()
     {
+        config(['database.connections.mongodb.database' => 'testing']);
         $site = new SiteStyles();
+        $n = DB::connection('mongodb')->getMongoDB()->dropCollection($site->getTable());
         $site->id = 1;
         $site->backgroundGradient = "background-color: red;";
         $site->save();
