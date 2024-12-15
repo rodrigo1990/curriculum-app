@@ -54,6 +54,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        DB::table('bodies')->insert([
+            'id' => 1,
+            'site_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
         DB::table('headers')->insert([
             'id' => 1,
             'site_id' => 1,
@@ -67,7 +74,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 1,
                 'title' => 'Whoami',
                 'slug' => 'whoami',
-                'site_id' => 1,
+                'body_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -75,7 +82,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 2,
                 'title' => 'Academics',
                 'slug' => 'academics',
-                'site_id' => 1,
+                'body_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -83,7 +90,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 3,
                 'title' => 'Services',
                 'slug' => 'services',
-                'site_id' => 1,
+                'body_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -91,7 +98,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 4,
                 'title' => 'Github',
                 'slug' => 'github',
-                'site_id' => 1,
+                'body_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -99,7 +106,7 @@ class DatabaseSeeder extends Seeder
                 'id' => 5,
                 'title' => 'Callme!',
                 'slug' => 'callme',
-                'site_id' => 1,
+                'body_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
