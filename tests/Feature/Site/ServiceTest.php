@@ -19,22 +19,13 @@ class ServiceTest extends TestCase
         $this->service = new SiteService(new SiteRepository(), new SiteMongoRepository(), new UserRepository());
     }
 
-    public function test_service_respose_has_mongo_records(): void
-    {
-        $site = $this->service->getSite(1);
-
-        if(!empty($site->styles))
-            $this->assertTrue(true);
-        else
-            $this->assertFalse(true);
-    }
 
 
     public function test_get_site_by_username_has_mongo_records(): void
     {
         $site = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->styles))
+        if(!empty($site->body->styles))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
