@@ -16,7 +16,8 @@ class SiteService implements SiteServiceInterface {
     {
     }
 
-    public function getSite(int $id){
+    public function getSite(int $id):SiteDto
+    {
         $site =  $this->siteRepository->getSite($id);
         $styles = $this->siteMongoRepository->getSite($id);
         $site->styles = $styles;
@@ -24,7 +25,8 @@ class SiteService implements SiteServiceInterface {
         return $site;
     }
 
-    public function getSiteByUser(string $username){
+    public function getSiteByUser(string $username):SiteDto
+    {
         $user = $this->userRepository->getUserByUsername($username);
         $site = $this->siteRepository->getSiteByUserId($user->id);
         $styles = $this->siteMongoRepository->getSite($site->id);
