@@ -46,7 +46,7 @@ class ServiceTest extends TestCase
     {
         $site = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->body->buttonsBody))
+        if(!empty($site->body->buttons))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);

@@ -36,7 +36,7 @@ class SiteService implements SiteServiceInterface {
         $buttonsBody = $this->buttonsRepository->getBodyButtonsByBodyId($site->body->id);
 
         $site->body->styles = $styles;
-        $site->body->buttonsBody = $buttonsBody;
+        $site->body->buttons = $buttonsBody;
 
         $site = SiteDto::from($site);
         return $site;
