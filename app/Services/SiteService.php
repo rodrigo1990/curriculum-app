@@ -4,10 +4,15 @@ use App\Interfaces\SiteServiceInterface;
 use App\ModelDtos\SiteDto;
 use App\Repositories\SiteMongoRepository;
 use App\Repositories\SiteRepository;
+use App\Repositories\UserRepository;
 
 class SiteService implements SiteServiceInterface {
 
-    function __construct(private SiteRepository $siteRepository, private SiteMongoRepository $siteMongoRepository)
+    function __construct(
+        private SiteRepository $siteRepository,
+        private SiteMongoRepository $siteMongoRepository,
+        private UserRepository $userRepository
+    )
     {
     }
 
@@ -17,5 +22,11 @@ class SiteService implements SiteServiceInterface {
         $site->styles = $styles;
         $site = SiteDto::from($site);
         return $site;
+    }
+
+    public function getSiteByUser(string $username){
+        $user = $this->userRepository->getUserByUsername($username);
+
+
     }
 }

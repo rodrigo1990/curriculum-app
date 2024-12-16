@@ -23,4 +23,14 @@ class SiteController extends Controller
         else
             throw new \Exception('Site not found');
     }
+
+
+    public function getSiteByUser(Request $request)
+    {
+        $site = $this->siteService->getSiteByUser($request->username);
+        if($site)
+            return new StdResource($site);
+        else
+            throw new \Exception('Site not found');
+    }
 }
