@@ -12,4 +12,8 @@ class Body extends Model
     public function site(){
         return $this->belongsTo(Site::class);
     }
+
+    public function buttonsBody(){
+        return $this->hasMany(ButtonsBody::class);
+    }
 }

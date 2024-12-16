@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Site;
 
+use App\Repositories\ButtonsRepository;
 use App\Repositories\SiteMongoRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
@@ -16,7 +17,7 @@ class ServiceTest extends TestCase
     protected function setUp(): void{
         parent::setUp();
 //        Artisan::call('db:seed');
-        $this->service = new SiteService(new SiteRepository(), new SiteMongoRepository(), new UserRepository());
+        $this->service = new SiteService(new SiteRepository(), new SiteMongoRepository(), new UserRepository(), new ButtonsRepository());
     }
 
 
@@ -32,6 +33,16 @@ class ServiceTest extends TestCase
     }
 
     public function test_get_site_by_username_has_header(): void
+    {
+        $site = $this->service->getSiteByUser('rodrigo1990');
+
+        if(!empty($site->header))
+            $this->assertTrue(true);
+        else
+            $this->assertFalse(true);
+    }
+
+    public function test_get_site_has_body_buttons(): void
     {
         $site = $this->service->getSiteByUser('rodrigo1990');
 
