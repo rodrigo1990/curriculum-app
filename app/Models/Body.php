@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Site extends Model
+class Body extends Model
 {
     use HasFactory;
 
-    public function body(){
-        return $this->hasOne(Body::class);
+    public function site(){
+        return $this->belongsTo(Site::class);
     }
 }
