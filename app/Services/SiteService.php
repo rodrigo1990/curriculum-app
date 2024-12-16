@@ -26,7 +26,10 @@ class SiteService implements SiteServiceInterface {
 
     public function getSiteByUser(string $username){
         $user = $this->userRepository->getUserByUsername($username);
-
-
+        $site = $this->siteRepository->getSiteByUserId($user->id);
+        $styles = $this->siteMongoRepository->getSite($site->id);
+        $site->styles = $styles;
+        $site = SiteDto::from($site);
+        return $site;
     }
 }

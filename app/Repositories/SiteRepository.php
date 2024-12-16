@@ -10,7 +10,7 @@ class SiteRepository
         return Site::find($id);
     }
 
-    public function getSiteByUser(string $user){
-        return Site::where('user_id', $user->id)->first();
+    public function getSiteByUserId(int $userId){
+        return Site::where('user_id', $userId)->first();
     }
 }
