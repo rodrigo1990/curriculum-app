@@ -12,4 +12,8 @@ class Site extends Model
     public function body(){
         return $this->hasOne(Body::class);
     }
+
+    public function header(){
+        return $this->hasOne(Header::class);
+    }
 }
