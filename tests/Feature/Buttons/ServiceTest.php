@@ -1,6 +1,6 @@
 <?php
 
-namespace ButtonBody;
+namespace Buttons;
 
 use App\Models\Body;
 use App\Repositories\BodyMongoRepository;
