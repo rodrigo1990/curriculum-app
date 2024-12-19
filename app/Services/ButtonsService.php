@@ -5,7 +5,7 @@ namespace App\Services;
 use App\ModelDtos\ButtonBodyDto;
 use App\Models\Body;
 use App\Models\ButtonsBody;
-use App\Models\ButtonsStyles;
+use App\Models\Mongo\ButtonsStyles;
 use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use Illuminate\Database\Eloquent\Collection;

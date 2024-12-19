@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Interfaces\SiteRepositoryInterface;
-use App\Models\BodyStyles;
+use App\Models\Mongo\BodyStyles;
 
 class BodyMongoRepository implements SiteRepositoryInterface
 {

@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Models\BodyStyles;
-use App\Models\ButtonsStyles;
+use App\Models\Mongo\BodyStyles;
+use App\Models\Mongo\ButtonsStyles;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

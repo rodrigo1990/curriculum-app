@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\ButtonsBody;
-use App\Models\ButtonsStyles;
+use App\Models\Mongo\ButtonsStyles;
 
 class ButtonsMongoRepository
 {

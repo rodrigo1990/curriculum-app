@@ -5,7 +5,7 @@ namespace App\ModelDtos;
 use App\Models\Body;
 use App\Models\Buttons;
 use App\Models\ButtonsBody;
-use App\Models\ButtonsStyles;
+use App\Models\Mongo\ButtonsStyles;
 use App\Models\Header;
 use Carbon\Carbon;
 use Spatie\LaravelData\Data;
