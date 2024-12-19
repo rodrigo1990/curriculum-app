@@ -3,11 +3,11 @@
 namespace App\Repositories;
 
 use App\Models\ButtonsBody;
-use App\Models\ButtonsBodyStyles;
+use App\Models\ButtonsStyles;
 
 class ButtonsBodyMongoRepository
 {
-    public function getButtonBody(int $bodyId): ButtonsBodyStyles{
-        return ButtonsBodyStyles::where('id', $bodyId)->first();
+    public function getButtonBody(int $bodyId): ButtonsStyles{
+        return ButtonsStyles::where('id', $bodyId)->first();
     }
 }

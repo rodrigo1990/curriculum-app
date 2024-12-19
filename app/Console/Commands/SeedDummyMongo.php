@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\BodyStyles;
-use App\Models\ButtonsBodyStyles;
+use App\Models\ButtonsStyles;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -35,7 +35,7 @@ class SeedDummyMongo extends Command
         $site->backgroundGradient = "background-color: red;";
         $site->save();
 
-        $buttonsBodyStyles = new ButtonsBodyStyles();
+        $buttonsBodyStyles = new ButtonsStyles();
         DB::connection('mongodb')->getMongoDB()->dropCollection($buttonsBodyStyles->getTable());
         $buttonsBodyStyles->id = 1;
         $buttonsBodyStyles->fontFamily = 'Roboto-Thin';
@@ -45,7 +45,7 @@ class SeedDummyMongo extends Command
         $buttonsBodyStyles->class = 'afterLine';
         $buttonsBodyStyles->save();
 
-        $buttonsBodyStyles2 = new ButtonsBodyStyles();
+        $buttonsBodyStyles2 = new ButtonsStyles();
         $buttonsBodyStyles2->id = 2;
         $buttonsBodyStyles2->fontFamily = 'Roboto-Thin';
         $buttonsBodyStyles2->color = 'White';
@@ -53,7 +53,7 @@ class SeedDummyMongo extends Command
         $buttonsBodyStyles2->afterLineBackground = '#CC5F00';
         $buttonsBodyStyles2->class = 'afterLine';
         $buttonsBodyStyles2->save();
-        $buttonsBodyStyles3 = new ButtonsBodyStyles();
+        $buttonsBodyStyles3 = new ButtonsStyles();
         $buttonsBodyStyles3->id = 3;
         $buttonsBodyStyles3->fontFamily = 'Roboto-Thin';
         $buttonsBodyStyles3->color = 'White';
@@ -61,7 +61,7 @@ class SeedDummyMongo extends Command
         $buttonsBodyStyles3->afterLineBackground = '#CC5F00';
         $buttonsBodyStyles3->class = 'afterLine';
         $buttonsBodyStyles3->save();
-        $buttonsBodyStyles4 = new ButtonsBodyStyles();
+        $buttonsBodyStyles4 = new ButtonsStyles();
         $buttonsBodyStyles4->id = 4;
         $buttonsBodyStyles4->fontFamily = 'Roboto-Thin';
         $buttonsBodyStyles4->color = 'White';
