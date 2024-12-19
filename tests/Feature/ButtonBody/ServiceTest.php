@@ -40,4 +40,17 @@ class ServiceTest extends TestCase
         $this->assertTrue(true);
     }
 
+
+    public function test_get_button_body_by_body_has_button_parent(): void
+    {
+        $buttons = $this->service->getButtonsBodyByBody(Body::find(1));
+
+        foreach ($buttons as $button) {
+            if(empty($button->button))
+                $this->assertFalse(true);
+        }
+
+        $this->assertTrue(true);
+    }
+
 }
