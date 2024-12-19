@@ -10,11 +10,11 @@ use App\Models\Header;
 use Carbon\Carbon;
 use Spatie\LaravelData\Data;
 
-class ButtonBodyDto extends Data
+class ButtonDto extends Data
 {
     public function __construct(
         public Buttons       $button,
-        public int           $body_id,
+        public int           $parent_id,
         public string        $class,
         public ButtonsStyles $styles,
 

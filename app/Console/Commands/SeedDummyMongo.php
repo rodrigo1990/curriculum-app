@@ -70,5 +70,18 @@ class SeedDummyMongo extends Command
         $buttonsBodyStyles4->class = 'afterLine';
 
         $buttonsBodyStyles4->save();
+
+
+        $buttonsBodyStyles5 = new ButtonsStyles();
+        $buttonsBodyStyles5->id = 5;
+        $buttonsBodyStyles5->fontFamily = 'Roboto-Thin';
+        $buttonsBodyStyles5->color = 'White';
+        $buttonsBodyStyles5->fontSize = '1.70rem';
+        $buttonsBodyStyles5->afterSquareBackground = '#CC5F00';
+        $buttonsBodyStyles5->class = 'afterSquare';
+        $buttonsBodyStyles5->save();
+
+
+
     }
 }
