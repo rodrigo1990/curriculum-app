@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\BodyStyles;
+use App\Models\ButtonsBodyStyles;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -33,5 +34,15 @@ class SeedDummyMongo extends Command
         $site->id = 1;
         $site->backgroundGradient = "background-color: red;";
         $site->save();
+
+        $buttonsBodyStyles = new ButtonsBodyStyles();
+        DB::connection('mongodb')->getMongoDB()->dropCollection($buttonsBodyStyles->getTable());
+        $buttonsBodyStyles->id = 1;
+        $buttonsBodyStyles->fontFamily = 'Roboto-Thin';
+        $buttonsBodyStyles->color = 'White';
+        $buttonsBodyStyles->fontSize = '1.70rem';
+        $buttonsBodyStyles->afterLineBackground = '#CC5F00';
+        $buttonsBodyStyles->class = 'afterLine';
+        $buttonsBodyStyles->save();
     }
 }
