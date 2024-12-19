@@ -3,7 +3,7 @@
 namespace Tests\Feature\Site;
 
 use App\Repositories\ButtonsRepository;
-use App\Repositories\SiteMongoRepository;
+use App\Repositories\BodyMongoRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
 use App\Services\SiteService;
@@ -17,7 +17,7 @@ class ServiceTest extends TestCase
     protected function setUp(): void{
         parent::setUp();
 //        Artisan::call('db:seed');
-        $this->service = new SiteService(new SiteRepository(), new SiteMongoRepository(), new UserRepository(), new ButtonsRepository());
+        $this->service = new SiteService(new SiteRepository(), new BodyMongoRepository(), new UserRepository(), new ButtonsRepository());
     }
 
 
