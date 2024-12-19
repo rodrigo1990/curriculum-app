@@ -33,7 +33,7 @@ class SiteService implements SiteServiceInterface {
         $user = $this->userRepository->getUserByUsername($username);
         $site = $this->siteRepository->getSiteByUserId($user->id);
         $bodyStyles = $this->bodyMongoRepository->getBody($site->id);
-        $buttonsBody = $this->buttonsBodyService->getButtonsBody($site->body);
+        $buttonsBody = $this->buttonsBodyService->getButtonsBodyByBody($site->body);
 
         $site->body->styles = $bodyStyles;
         $site->body->buttons = $buttonsBody;

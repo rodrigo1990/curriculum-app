@@ -20,7 +20,7 @@ class ButtonsBodyService
     {
     }
 
-    public function getButtonsBody(Body $body): Collection{
+    public function getButtonsBodyByBody(Body $body): Collection{
         $buttonsBody = $this->buttonsRepository->getBodyButtons($body->id);
         $buttonsBodyCollection = new Collection();
         foreach($buttonsBody as $button){
