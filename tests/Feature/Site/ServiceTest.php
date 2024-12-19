@@ -6,6 +6,7 @@ use App\Repositories\ButtonsRepository;
 use App\Repositories\BodyMongoRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
+use App\Services\ButtonsBodyService;
 use App\Services\SiteService;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
@@ -17,7 +18,11 @@ class ServiceTest extends TestCase
     protected function setUp(): void{
         parent::setUp();
 //        Artisan::call('db:seed');
-        $this->service = new SiteService(new SiteRepository(), new BodyMongoRepository(), new UserRepository(), new ButtonsRepository());
+        $this->service = new SiteService(new SiteRepository(),
+            new BodyMongoRepository(),
+            new UserRepository(),
+            new ButtonsBodyService(new ButtonsRepository()),
+        );
     }
 
 

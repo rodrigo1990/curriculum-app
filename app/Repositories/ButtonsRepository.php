@@ -6,7 +6,7 @@ use App\Models\ButtonsBody;
 
 class ButtonsRepository
 {
-    public function getBodyButtonsByBodyId(int $bodyId){
+    public function getBodyButtons(int $bodyId){
         return ButtonsBody::where('body_id', $bodyId)->get();
     }
 }
