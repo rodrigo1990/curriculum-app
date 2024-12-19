@@ -9,12 +9,15 @@ use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
 use App\Services\ButtonsBodyService;
 use App\Services\SiteService;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
 class ServiceTest extends TestCase
 {
     private $service;
+
+    use RefreshDatabase;
 
     protected function setUp(): void{
         parent::setUp();

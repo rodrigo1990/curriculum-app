@@ -22,8 +22,6 @@ class DbTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Artisan::call('db:seed');
-        Artisan::call('mongo:seed');
     }
     /**
      * A basic test example.
