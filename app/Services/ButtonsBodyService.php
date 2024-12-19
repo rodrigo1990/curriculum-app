@@ -6,15 +6,15 @@ use App\ModelDtos\ButtonBodyDto;
 use App\Models\Body;
 use App\Models\ButtonsBody;
 use App\Models\ButtonsStyles;
-use App\Repositories\ButtonsBodyMongoRepository;
+use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use Illuminate\Database\Eloquent\Collection;
 
 class ButtonsBodyService
 {
     function __construct(
-        private ButtonsRepository   $buttonsRepository,
-        private ButtonsBodyMongoRepository $buttonsBodyMongoRepository,
+        private ButtonsRepository      $buttonsRepository,
+        private ButtonsMongoRepository $buttonsBodyMongoRepository,
 
     )
     {

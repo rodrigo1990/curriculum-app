@@ -4,7 +4,7 @@ namespace ButtonBody;
 
 use App\Models\Body;
 use App\Repositories\BodyMongoRepository;
-use App\Repositories\ButtonsBodyMongoRepository;
+use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
@@ -24,7 +24,7 @@ class ServiceTest extends TestCase
 //        Artisan::call('db:seed');
         $this->service = new ButtonsBodyService(
             new ButtonsRepository(),
-            new ButtonsBodyMongoRepository(),
+            new ButtonsMongoRepository(),
         );
     }
 
