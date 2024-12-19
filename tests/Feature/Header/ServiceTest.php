@@ -23,5 +23,9 @@ class ServiceTest extends TestCase
 
     public function test_get_header_by_id(){
         $header = $this->service->getHeaderById(1);
+        if(!empty($header))
+            $this->assertTrue(true);
+        else
+            $this->assertFalse(true);
     }
 }
