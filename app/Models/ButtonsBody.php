@@ -12,7 +12,7 @@ class ButtonsBody extends Model
     protected $table = 'buttons_body';
 
     public function button(){
-        return $this->belongsTo(Buttons::class);
+        return $this->belongsTo(Buttons::class,'button_id');
     }
 
     public function body(){
