@@ -28,4 +28,13 @@ class ServiceTest extends TestCase
         else
             $this->assertFalse(true);
     }
+
+
+    public function test_get_header_has_buttons(){
+        $header = $this->service->getHeaderById(1);
+        if(!empty($header->buttons))
+            $this->assertTrue(true);
+        else
+            $this->assertFalse(true);
+    }
 }
