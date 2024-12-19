@@ -14,7 +14,7 @@ class ButtonsBodyService
 {
     function __construct(
         private ButtonsRepository      $buttonsRepository,
-        private ButtonsMongoRepository $buttonsBodyMongoRepository,
+        private ButtonsMongoRepository $buttonsMongoRepository,
 
     )
     {
@@ -24,7 +24,7 @@ class ButtonsBodyService
         $buttonsBody = $this->buttonsRepository->getBodyButtons($body->id);
         $buttonsBodyCollection = new Collection();
         foreach($buttonsBody as $button){
-            $styles = $this->buttonsBodyMongoRepository->getButtonBodyByBodyId($button->button_id);
+            $styles = $this->buttonsMongoRepository->getButtonBodyByBodyId($button->button_id);
             $buttonBodyDto = new ButtonBodyDto($button->button()->first(), $button->body_id, $styles->class, $styles);
             $buttonsBodyCollection->push($buttonBodyDto);
             unset($buttonBodyDto->styles->class);
