@@ -19,7 +19,7 @@ class SiteDto extends Data
         public Carbon $createdAt,
         public Carbon $updatedAt,
         public Body $body,
-        public Header $header,
+        public HeaderDto $header,
 
     ) {
     }

@@ -22,7 +22,7 @@ class ServiceTest extends TestCase
     }
 
     public function test_get_header_by_id(){
-        $header = $this->service->getHeaderById(1);
+        $header = $this->service->getHeaderBySiteId(1);
         if(!empty($header))
             $this->assertTrue(true);
         else
@@ -31,7 +31,7 @@ class ServiceTest extends TestCase
 
 
     public function test_get_header_has_buttons(){
-        $header = $this->service->getHeaderById(1);
+        $header = $this->service->getHeaderBySiteId(1);
         if(!empty($header->buttons))
             $this->assertTrue(true);
         else

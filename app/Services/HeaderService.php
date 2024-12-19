@@ -16,8 +16,8 @@ class HeaderService
     {
     }
 
-    public function getHeaderById(int $headerId): HeaderDto{
-        $header = $this->headerRepository->getHeaderById($headerId);
+    public function getHeaderBySiteId(int $siteId): HeaderDto{
+        $header = $this->headerRepository->getHeaderBySiteId($siteId);
         $buttons = $this->buttonsService->getButtonsHeaderByHeader($header);
         $header->buttons = $buttons;
         $headerDto = HeaderDto::from($header);

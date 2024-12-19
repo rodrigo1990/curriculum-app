@@ -5,9 +5,11 @@ namespace Tests\Feature\Site;
 use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use App\Repositories\BodyMongoRepository;
+use App\Repositories\HeaderRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
 use App\Services\ButtonsService;
+use App\Services\HeaderService;
 use App\Services\SiteService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
@@ -26,6 +28,7 @@ class ServiceTest extends TestCase
             new BodyMongoRepository(),
             new UserRepository(),
             new ButtonsService(new ButtonsRepository(), new ButtonsMongoRepository()),
+            new HeaderService(new HeaderRepository(), new ButtonsService(new ButtonsRepository(), new ButtonsMongoRepository()))
         );
     }
 

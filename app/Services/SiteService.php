@@ -15,6 +15,7 @@ class SiteService implements SiteServiceInterface {
         private BodyMongoRepository $bodyMongoRepository,
         private UserRepository      $userRepository,
         private ButtonsService      $buttonsBodyService,
+        private HeaderService       $headerService,
     )
     {
     }
@@ -32,11 +33,14 @@ class SiteService implements SiteServiceInterface {
     {
         $user = $this->userRepository->getUserByUsername($username);
         $site = $this->siteRepository->getSiteByUserId($user->id);
+
         $bodyStyles = $this->bodyMongoRepository->getBody($site->id);
         $buttonsBody = $this->buttonsBodyService->getButtonsBodyByBody($site->body);
-
         $site->body->styles = $bodyStyles;
         $site->body->buttons = $buttonsBody;
+
+        $header = $this->headerService->getHeaderBySiteId($site->id);
+        $site->header = $header;
 
         $site = SiteDto::from($site);
         return $site;

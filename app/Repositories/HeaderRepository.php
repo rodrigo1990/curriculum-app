@@ -6,8 +6,8 @@ use App\Models\Header;
 
 class HeaderRepository
 {
-    public function getHeaderById(int $headerId):Header
+    public function getHeaderBySiteId(int $siteId):Header
     {
-        return Header::find($headerId);
+        return Header::where('site_id',$siteId)->first();
     }
 }
