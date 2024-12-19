@@ -7,7 +7,7 @@ use App\Models\ButtonsBodyStyles;
 
 class ButtonsBodyMongoRepository
 {
-    public function getButtonsBody(int $bodyId): ButtonsBodyStyles{
+    public function getButtonBody(int $bodyId): ButtonsBodyStyles{
         return ButtonsBodyStyles::where('id', $bodyId)->first();
     }
 }
