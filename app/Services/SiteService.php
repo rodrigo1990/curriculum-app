@@ -14,7 +14,7 @@ class SiteService implements SiteServiceInterface {
         private SiteRepository      $siteRepository,
         private BodyMongoRepository $bodyMongoRepository,
         private UserRepository      $userRepository,
-        private ButtonsBodyService $buttonsBodyService,
+        private ButtonsService      $buttonsBodyService,
     )
     {
     }

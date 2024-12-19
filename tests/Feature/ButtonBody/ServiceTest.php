@@ -8,7 +8,7 @@ use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use App\Repositories\SiteRepository;
 use App\Repositories\UserRepository;
-use App\Services\ButtonsBodyService;
+use App\Services\ButtonsService;
 use App\Services\SiteService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -22,7 +22,7 @@ class ServiceTest extends TestCase
     protected function setUp(): void{
         parent::setUp();
 //        Artisan::call('db:seed');
-        $this->service = new ButtonsBodyService(
+        $this->service = new ButtonsService(
             new ButtonsRepository(),
             new ButtonsMongoRepository(),
         );

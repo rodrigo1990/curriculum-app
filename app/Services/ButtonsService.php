@@ -10,7 +10,7 @@ use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use Illuminate\Database\Eloquent\Collection;
 
-class ButtonsBodyService
+class ButtonsService
 {
     function __construct(
         private ButtonsRepository      $buttonsRepository,
