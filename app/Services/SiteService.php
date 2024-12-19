@@ -22,7 +22,7 @@ class SiteService implements SiteServiceInterface {
     public function getSite(int $id):SiteDto
     {
         $site =  $this->siteRepository->getSite($id);
-        $bodyStyles = $this->bodyMongoRepository->getSite($id);
+        $bodyStyles = $this->bodyMongoRepository->getBody($id);
         $site->styles = $bodyStyles;
         $site = SiteDto::from($site);
         return $site;
@@ -32,7 +32,7 @@ class SiteService implements SiteServiceInterface {
     {
         $user = $this->userRepository->getUserByUsername($username);
         $site = $this->siteRepository->getSiteByUserId($user->id);
-        $bodyStyles = $this->bodyMongoRepository->getSite($site->id);
+        $bodyStyles = $this->bodyMongoRepository->getBody($site->id);
         $buttonsBody = $this->buttonsRepository->getBodyButtonsByBodyId($site->body->id);
 
         $site->body->styles = $bodyStyles;

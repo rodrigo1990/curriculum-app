@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface SiteRepositoryInterface
 {
-    public function getSite(int $id);
+    public function getBody(int $id);
 }
