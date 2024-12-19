@@ -63,4 +63,26 @@ class ServiceTest extends TestCase
         else
             $this->assertFalse(true);
     }
+
+
+    public function test_get_site_has_header(): void
+    {
+        $site = $this->service->getSiteByUser('rodrigo1990');
+
+        if(!empty($site->header))
+            $this->assertTrue(true);
+        else
+            $this->assertFalse(true);
+    }
+
+
+    public function test_get_site_has_header_buttons(): void
+    {
+        $site = $this->service->getSiteByUser('rodrigo1990');
+
+        if(!empty($site->header->buttons))
+            $this->assertTrue(true);
+        else
+            $this->assertFalse(true);
+    }
 }
