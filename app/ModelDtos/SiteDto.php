@@ -15,6 +15,8 @@ class SiteDto extends Data
     public function __construct(
         public int $id,
         public string $name,
+        public string $profile_image,
+        public string $logo,
         public int $userId,
         public Carbon $createdAt,
         public Carbon $updatedAt,
