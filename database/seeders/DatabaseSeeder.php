@@ -40,6 +40,8 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 1,
                 'name' => 'Testing site',
+                'profile_image' => 'default.jpg',
+                'logo' => 'default.jpg',
                 'user_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -47,6 +49,8 @@ class DatabaseSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Testing site',
+                'profile_image' => 'default.jpg',
+                'logo' => 'default.jpg',
                 'user_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
