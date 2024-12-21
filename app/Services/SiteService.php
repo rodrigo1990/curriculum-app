@@ -32,6 +32,7 @@ class SiteService implements SiteServiceInterface {
 
     public function getSiteByUser(string $username):SiteDto
     {
+        $siteDto = new SiteDto();
         $user = $this->userRepository->getUserByUsername($username);
         $site = $this->siteRepository->getSiteByUserId($user->id);
 
@@ -41,9 +42,9 @@ class SiteService implements SiteServiceInterface {
         $site->body->styles = $bodyStyles;
         $site->body->buttons = $buttonsBody;
         $site->header->buttons = $buttonsHeader;
-        $header = HeaderDto::from($site->header);
-        $site->header = $header;
-        $site = SiteDto::from($site);
-        return $site;
+        $siteDto->site = $site;
+
+
+        return $siteDto;
     }
 }
