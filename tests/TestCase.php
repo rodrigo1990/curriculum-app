@@ -7,8 +7,10 @@ use Illuminate\Support\Facades\Artisan;
 
 abstract class TestCase extends BaseTestCase
 {
-    protected function setUp(): void{
-        parent::setUp();
-        Artisan::call('db:seed');
-    }
+    /**
+     * Indicates whether the default seeder should run before each test.
+     *
+     * @var bool
+     */
+    protected $seed = true;
 }
