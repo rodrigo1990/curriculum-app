@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 use App\Interfaces\SiteServiceInterface;
+use App\ModelDtos\HeaderDto;
 use App\ModelDtos\SiteDto;
 use App\Models\ButtonBody;
 use App\Repositories\ButtonsRepository;
@@ -14,7 +15,7 @@ class SiteService implements SiteServiceInterface {
         private SiteRepository      $siteRepository,
         private BodyMongoRepository $bodyMongoRepository,
         private UserRepository      $userRepository,
-        private ButtonsService      $buttonsBodyService,
+        private ButtonsService      $buttonsService,
         private HeaderService       $headerService,
     )
     {
@@ -35,13 +36,13 @@ class SiteService implements SiteServiceInterface {
         $site = $this->siteRepository->getSiteByUserId($user->id);
 
         $bodyStyles = $this->bodyMongoRepository->getBody($site->id);
-        $buttonsBody = $this->buttonsBodyService->getButtonsBodyByBody($site->body);
+        $buttonsBody = $this->buttonsService->getButtonsBodyByBody($site->body);
+        $buttonsHeader = $this->buttonsService->getButtonsHeaderByHeader($site->header);
         $site->body->styles = $bodyStyles;
         $site->body->buttons = $buttonsBody;
-
-        $header = $this->headerService->getHeaderBySiteId($site->id);
+        $site->header->buttons = $buttonsHeader;
+        $header = HeaderDto::from($site->header);
         $site->header = $header;
-
         $site = SiteDto::from($site);
         return $site;
     }
