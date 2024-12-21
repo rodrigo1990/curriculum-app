@@ -28,13 +28,7 @@ class DbTest extends TestCase
      */
     public function test_db_seed_was_successful(): void
     {
-        $site = Site::first();
-        $styles = BodyStyles::first();
-        if($site && $styles)
-            $this->assertTrue(true);
-        else {
-            $this->assertFalse(true);
-        }
+        $this->assertDatabaseCount('sites', 1);
 
     }
 }
