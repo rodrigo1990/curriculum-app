@@ -36,9 +36,9 @@ class ServiceTest extends TestCase
 
     public function test_get_site_by_username_has_mongo_records(): void
     {
-        $site = $this->service->getSiteByUser('rodrigo1990');
+        $siteDto = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->body->styles))
+        if(!empty($siteDto->site->body->styles))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
@@ -46,9 +46,9 @@ class ServiceTest extends TestCase
 
     public function test_get_site_by_username_has_header(): void
     {
-        $site = $this->service->getSiteByUser('rodrigo1990');
+        $siteDto = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->header))
+        if(!empty($siteDto->site->header))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
@@ -56,9 +56,9 @@ class ServiceTest extends TestCase
 
     public function test_get_site_has_body_buttons(): void
     {
-        $site = $this->service->getSiteByUser('rodrigo1990');
+        $siteDto = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->body->buttons))
+        if(!empty($siteDto->site->body->buttons))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
@@ -67,9 +67,9 @@ class ServiceTest extends TestCase
 
     public function test_get_site_has_header(): void
     {
-        $site = $this->service->getSiteByUser('rodrigo1990');
+        $siteDto = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->header))
+        if(!empty($siteDto->site->header))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
@@ -78,9 +78,9 @@ class ServiceTest extends TestCase
 
     public function test_get_site_has_header_buttons(): void
     {
-        $site = $this->service->getSiteByUser('rodrigo1990');
+        $siteDto = $this->service->getSiteByUser('rodrigo1990');
 
-        if(!empty($site->header->buttons))
+        if(!empty($siteDto->site->header->buttons))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);

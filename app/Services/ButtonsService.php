@@ -24,9 +24,9 @@ class ButtonsService
     public function getButtonsBodyByBody(Body $body): Collection{
         $buttonsBody = $this->buttonsRepository->getBodyButtons($body->id);
         $buttonsBodyCollection = new Collection();
-        foreach($buttonsBody as $button){
-            $styles = $this->buttonsMongoRepository->getButtonById($button->button_id);
-            $buttonBodyDto = new ButtonDto($button->button()->first(), $button->body_id, $styles->class, $styles);
+        foreach($buttonsBody as $buttonBody){
+            $styles = $this->buttonsMongoRepository->getButtonById($buttonBody->button_id);
+            $buttonBodyDto = new ButtonDto($buttonBody->button()->first(), $buttonBody->body_id, $styles->class, $styles);
             $buttonsBodyCollection->push($buttonBodyDto);
             unset($buttonBodyDto->styles->class);
         }
@@ -36,9 +36,9 @@ class ButtonsService
     public function getButtonsHeaderByHeader(Header $header): Collection{
         $buttonsBody = $this->buttonsRepository->getHeaderButtons($header->id);
         $buttonsBodyCollection = new Collection();
-        foreach($buttonsBody as $button){
-            $styles = $this->buttonsMongoRepository->getButtonById($button->button_id);
-            $buttonBodyDto = new ButtonDto($button->button()->first(), $button->header_id, $styles->class, $styles);
+        foreach($buttonsBody as $buttonHeader){
+            $styles = $this->buttonsMongoRepository->getButtonById($buttonHeader->button_id);
+            $buttonBodyDto = new ButtonDto($buttonHeader->button()->first(), $buttonHeader->header_id, $styles->class, $styles);
             $buttonsBodyCollection->push($buttonBodyDto);
             unset($buttonBodyDto->styles->class);
         }
