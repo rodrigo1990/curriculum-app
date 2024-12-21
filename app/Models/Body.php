@@ -14,6 +14,10 @@ class Body extends Model
     }
 
     public function buttonsBody(){
-        return $this->hasMany(ButtonsBody::class);
+        return $this->hasMany(ButtonBody::class);
+    }
+
+    public function pages(){
+        return $this->hasMany(Page::class);
     }
 }

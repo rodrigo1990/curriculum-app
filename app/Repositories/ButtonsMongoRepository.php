@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\ButtonsBody;
+use App\Models\ButtonBody;
 use App\Models\Mongo\ButtonsStyles;
 
 class ButtonsMongoRepository

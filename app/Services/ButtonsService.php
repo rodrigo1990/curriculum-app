@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\ModelDtos\ButtonDto;
 use App\Models\Body;
-use App\Models\ButtonsBody;
+use App\Models\ButtonBody;
 use App\Models\Header;
 use App\Models\Mongo\ButtonsStyles;
 use App\Repositories\ButtonsMongoRepository;

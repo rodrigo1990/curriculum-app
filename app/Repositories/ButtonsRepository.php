@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\ButtonsBody;
-use App\Models\ButtonsHeader;
+use App\Models\ButtonBody;
+use App\Models\ButtonHeader;
 
 class ButtonsRepository
 {
     public function getBodyButtons(int $bodyId){
-        return ButtonsBody::where('body_id', $bodyId)->with('button')->get();
+        return ButtonBody::where('body_id', $bodyId)->with('button')->get();
     }
 
     public function getHeaderButtons(int $headerId){
-        return ButtonsHeader::where('header_id', $headerId)->with('button')->get();
+        return ButtonHeader::where('header_id', $headerId)->with('button')->get();
     }
 }

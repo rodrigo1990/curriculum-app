@@ -2,7 +2,7 @@
 namespace App\Services;
 use App\Interfaces\SiteServiceInterface;
 use App\ModelDtos\SiteDto;
-use App\Models\ButtonsBody;
+use App\Models\ButtonBody;
 use App\Repositories\ButtonsRepository;
 use App\Repositories\BodyMongoRepository;
 use App\Repositories\SiteRepository;

@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ButtonsHeader extends Model
+class ButtonHeader extends Model
 {
     use HasFactory;
 
     protected $table = 'buttons_header';
 
     public function button(){
-        return $this->belongsTo(Buttons::class,'button_id');
+        return $this->belongsTo(Button::class,'button_id');
     }
 
     public function header(){
