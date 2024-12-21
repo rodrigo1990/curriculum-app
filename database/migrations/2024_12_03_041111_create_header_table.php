@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('headers', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->unsignedBigInteger('site_id');
             $table->timestamps();
             $table->foreign('site_id')->references('id')->on('sites');
