@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
     {
 
         config(['database.connections.mongodb.database' => env('MONGO_DB')]);
-        $n = DB::connection('mongodb')->getMongoDB()->dropCollection('body_styles');
+        DB::connection('mongodb')->getMongoDB()->dropCollection('body_styles');
         DB::connection('mongodb')->getMongoDB()->dropCollection('buttons_styles');
 
 
