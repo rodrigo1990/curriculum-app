@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Site;
-use App\Models\SiteStyles;
+use App\Models\Mongo\BodyStyles;
 use App\Repositories\SiteRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
@@ -22,21 +22,13 @@ class DbTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Artisan::call('db:seed');
-        Artisan::call('mongo:seed');
     }
     /**
      * A basic test example.
      */
     public function test_db_seed_was_successful(): void
     {
-        $site = Site::first();
-        $styles = SiteStyles::first();
-        if($site && $styles)
-            $this->assertTrue(true);
-        else {
-            $this->assertFalse(true);
-        }
+        $this->assertDatabaseCount('sites', 1);
 
     }
 }
