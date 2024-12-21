@@ -17,10 +17,11 @@ class HeaderService
     }
 
     public function getHeaderBySiteId(int $siteId): HeaderDto{
+        $headerDto = new HeaderDto();
         $header = $this->headerRepository->getHeaderBySiteId($siteId);
         $buttons = $this->buttonsService->getButtonsHeaderByHeader($header);
         $header->buttons = $buttons;
-        $headerDto = HeaderDto::from($header);
+        $headerDto->header = $header;
         return $headerDto;
     }
 }
