@@ -30,7 +30,7 @@ class ServiceTest extends TestCase
 
     public function test_get_button_body_by_body_has_styles(): void
     {
-        $buttons = $this->service->getButtonsBodyByBody(Body::find(1));
+        $buttons = $this->service->getButtonsBodyByBody(Body::first());
 
         foreach ($buttons as $button) {
             if(empty($button->styles))
@@ -43,7 +43,7 @@ class ServiceTest extends TestCase
 
     public function test_get_button_body_by_body_has_button_parent(): void
     {
-        $buttons = $this->service->getButtonsBodyByBody(Body::find(1));
+        $buttons = $this->service->getButtonsBodyByBody(Body::first());
 
         foreach ($buttons as $button) {
             if(empty($button->button))

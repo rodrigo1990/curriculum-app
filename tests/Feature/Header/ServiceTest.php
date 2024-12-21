@@ -2,6 +2,7 @@
 
 namespace Header;
 
+use App\Models\Site;
 use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use App\Repositories\HeaderRepository;
@@ -22,7 +23,7 @@ class ServiceTest extends TestCase
     }
 
     public function test_get_header_by_id(){
-        $header = $this->service->getHeaderBySiteId(1);
+        $header = $this->service->getHeaderBySiteId(Site::first()->id);
         if(!empty($header))
             $this->assertTrue(true);
         else
@@ -31,7 +32,7 @@ class ServiceTest extends TestCase
 
 
     public function test_get_header_has_buttons(){
-        $header = $this->service->getHeaderBySiteId(1);
+        $header = $this->service->getHeaderBySiteId(Site::first()->id);
         if(!empty($header->buttons))
             $this->assertTrue(true);
         else
