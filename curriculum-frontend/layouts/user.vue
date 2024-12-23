@@ -20,14 +20,18 @@
 </template>
 
 <script setup>
+  //REQUEST TO BACKEND, USE THIS RESPONSE FOR INTEGRATION
+  // const {data} = await useFetch('/api/site')
+  // const body = data.value.body;
+  // console.log(data.value.body.styles.backgroundGradient)
   const {data: site, pendingSite} = await useFetch('/api/dummy/site')
-  const backgroundColor = ref(site.value.response.styles)
+  const backgroundColor = ref(site.value.response.styles).value
   useHead({
     style: [
       {
         children: `
           body {
-            ${backgroundColor.value}
+            ${backgroundColor}
           }
         `
       }
