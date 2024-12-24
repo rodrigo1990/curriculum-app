@@ -24,8 +24,9 @@
   // const {data} = await useFetch('/api/site')
   // const body = data.value.body;
   // console.log(data.value.body.styles.backgroundGradient)
-  const {data: site, pendingSite} = await useFetch('/api/dummy/site')
-  const backgroundColor = ref(site.value.response.styles).value
+  const {data, pendingSite} = await useFetch('/api/dummy/site')
+  const backgroundColor = ref(data.value.response.data.site.body.styles.backgroundGradient).value
+
   useHead({
     style: [
       {
