@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\StdResource;
 use App\Interfaces\SiteServiceInterface;
-use App\Models\Mongo\BodyStyles;
+use App\Models\Mongo\BodyStylesMongo;
 use App\Services\SiteService;
 use Illuminate\Http\Request;
 

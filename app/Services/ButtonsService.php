@@ -6,7 +6,7 @@ use App\ModelDtos\ButtonDto;
 use App\Models\Body;
 use App\Models\ButtonBody;
 use App\Models\Header;
-use App\Models\Mongo\ButtonsStyles;
+use App\Models\Mongo\ButtonsStylesMongo;
 use App\Repositories\ButtonsMongoRepository;
 use App\Repositories\ButtonsRepository;
 use Illuminate\Database\Eloquent\Collection;
