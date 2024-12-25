@@ -33,8 +33,6 @@ class SiteController extends Controller
             $site = $this->siteService->getSiteByUser($request->username);
             if ($site)
                 return new StdResource($site);
-            else
-                throw new \Exception('Site not found');
         }catch (\Throwable $e){
             if($this->getNotFoundConditional($e))
                 throw new \Exception('Site not found');
