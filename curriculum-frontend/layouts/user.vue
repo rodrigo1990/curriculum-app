@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ButtonsListColumn />
+          <ButtonsListColumn :buttons="buttonsBody"/>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
           <ProfileImage />
@@ -21,7 +21,8 @@
 
 <script setup>
   ///api/dummy/site
-  const {data} = await useFetch('/api/site')
+  const {data} = await useFetch('/api/dummy/site')
+  const buttonsBody = ref(data.value.site.body.buttons).value
   const backgroundColor = ref(data.value.site.body.styles.backgroundGradient).value
 
   useHead({

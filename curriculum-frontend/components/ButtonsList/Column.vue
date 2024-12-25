@@ -1,10 +1,10 @@
 <template>
   <div class="buttons-column">
     <ul>
-        <li v-for="(item) in buttonsArray" :key="item.id">
+        <li v-for="(item) in props.buttons" :key="item.button.id">
         
-          <ButtonColumn :contentId="item.contentId"
-           :description="item.description"
+          <ButtonColumn :contentId="item.button.page_id"
+           :description="item.button.name"
             :class="item.class"
             :styles="item.styles"
           />
@@ -15,8 +15,13 @@
 </template>
 
 <script setup>
-  const {data: buttonsBody, pendingBtnsBody} = await useFetch('/api/dummy/buttonsBody')
-  const buttonsArray = ref(buttonsBody.value.response)
+const props = defineProps({
+  buttons: {
+    type: Array,
+    required:true
+  },
+})
+console.log(props.buttons)
 </script>
 
 <style scoped lang="scss">
