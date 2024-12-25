@@ -8,7 +8,7 @@
           <ButtonsListColumn :buttons="buttonsBody"/>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
-          <ProfileImage />
+          <ProfileImage :img="profileImg"/>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-6">
           <slot />
@@ -25,7 +25,7 @@
   const buttonsBody = ref(data.value.site.body.buttons).value
   const buttonsHeader = ref(data.value.site.header.buttons).value
   const backgroundColor = ref(data.value.site.body.styles.backgroundGradient).value
-
+  const profileImg = ref(data.value.site.profile_image).value
   useHead({
     style: [
       {

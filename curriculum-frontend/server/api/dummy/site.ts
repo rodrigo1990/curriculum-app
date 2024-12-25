@@ -2,7 +2,7 @@ const site =
     {
         "id": 1,
         "name": "Juwan Ferry Jr.",
-        "profile_image": "https://via.placeholder.com/640x480.png/0044ee?text=qui",
+        "profile_image": "pic.jpg",
         "logo": "https://via.placeholder.com/640x480.png/000077?text=atque",
         "user_id": 1,
         "created_at": "2024-12-21T07:52:17.000000Z",
