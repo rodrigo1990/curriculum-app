@@ -18,11 +18,11 @@ class PageService
     public function get(int $id):PageDto
     {
         $page = $this->pageRepository->get($id);
-        $contentMongo = $this->contentService->getByPageId($id);
+        $content = $this->contentService->getByPageId($id);
 
         $pageDto = new PageDto();
         $pageDto->page = $page;
-        $pageDto->content = $contentMongo;
+        $pageDto->content = $content;
 
         return $pageDto;
 
