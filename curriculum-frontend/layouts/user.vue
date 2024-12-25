@@ -1,14 +1,14 @@
 <template>
 <div id="global-wrapper">
-  <HeaderMain/>
+  <HeaderMain :buttons="buttonsHeader"/>
   <section id="body">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-4 col-lg-2"> 
-          <ButtonsListColumn />
+          <ButtonsListColumn :buttons="buttonsBody"/>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-4">
-          <ProfileImage />
+          <ProfileImage :img="profileImg"/>
         </div>
         <div class="col-xs-12 col-md-4 col-lg-6">
           <slot />
@@ -20,14 +20,18 @@
 </template>
 
 <script setup>
-  const {data: site, pendingSite} = await useFetch('/api/dummy/site')
-  const backgroundColor = ref(site.value.response.styles)
+  ///api/dummy/site
+  const {data} = await useFetch('/api/dummy/site')
+  const buttonsBody = ref(data.value.site.body.buttons).value
+  const buttonsHeader = ref(data.value.site.header.buttons).value
+  const backgroundColor = ref(data.value.site.body.styles.backgroundGradient).value
+  const profileImg = ref(data.value.site.profile_image).value
   useHead({
     style: [
       {
         children: `
           body {
-            ${backgroundColor.value}
+            ${backgroundColor}
           }
         `
       }
