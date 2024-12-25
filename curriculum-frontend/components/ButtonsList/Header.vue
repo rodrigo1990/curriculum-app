@@ -1,11 +1,11 @@
 <template>
   <div class="buttons-header">
     <ul>
-        <li v-for="(btn, index) in buttonsArray" :key="index">
-          <ButtonHeader :contentId="btn.contentId" 
-          :description="btn.description"
-          :class="btn.class"
-          :styles="btn.styles"
+        <li v-for="(item, index) in props.buttons" :key="item.button.id">
+          <ButtonHeader :contentId="item.button.page_id"
+          :description="item.button.name"
+          :class="item.class"
+          :styles="item.styles"
           /> 
         </li>
     </ul>
@@ -13,8 +13,12 @@
 </template>
 
 <script setup>
-const {data: buttonsHeader, pendingBtnsHeader} = await useFetch('/api/dummy/buttonsHeader')
-const buttonsArray = ref(buttonsHeader.value.response)
+const props = defineProps({
+  buttons: {
+    type: Array,
+    required:false
+  }
+})
 </script>
 <style scoped lang="scss">
     ul{

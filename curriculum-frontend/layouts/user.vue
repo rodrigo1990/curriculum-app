@@ -1,6 +1,6 @@
 <template>
 <div id="global-wrapper">
-  <HeaderMain/>
+  <HeaderMain :buttons="buttonsHeader"/>
   <section id="body">
     <div class="container-fluid">
       <div class="row">
@@ -23,6 +23,7 @@
   ///api/dummy/site
   const {data} = await useFetch('/api/dummy/site')
   const buttonsBody = ref(data.value.site.body.buttons).value
+  const buttonsHeader = ref(data.value.site.header.buttons).value
   const backgroundColor = ref(data.value.site.body.styles.backgroundGradient).value
 
   useHead({
