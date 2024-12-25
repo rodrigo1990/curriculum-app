@@ -17,4 +17,8 @@ class Page extends Model
         return $this->hasMany(Button::class);
     }
 
+    public function content(){
+        return $this->hasOne(Content::class);
+    }
+
 }
