@@ -9,5 +9,4 @@ use Spatie\LaravelData\Data;
 class PageDto extends Data
 {
     public Page $page;
-    public ContentDto $content;
 }

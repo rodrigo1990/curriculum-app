@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\ModelDtos\ContentDto;
+use App\Models\Mongo\ContentMongo;
 use App\Repositories\ContentMongoRepository;
 use App\Repositories\ContentRepository;
 
@@ -15,17 +16,9 @@ class ContentService
     {
     }
 
-    public function getByPageId(int $pageId): ContentDto
+    public function getByPageId(int $pageId): ContentMongo
     {
-        $content = $this->contentRepository->get($pageId);
         $contentMongo = $this->contentMongoRepository->get($pageId);
-
-        $contentDto = new ContentDto();
-        $contentDto->content = $content;
-        $contentDto->contentMongo = $contentMongo;
-
-        return $contentDto;
-
-
+        return $contentMongo;
     }
 }

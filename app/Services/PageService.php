@@ -20,9 +20,9 @@ class PageService
         $page = $this->pageRepository->get($id);
         $content = $this->contentService->getByPageId($id);
 
+        $page->content->content = $content;
         $pageDto = new PageDto();
         $pageDto->page = $page;
-        $pageDto->content = $content;
 
         return $pageDto;
 

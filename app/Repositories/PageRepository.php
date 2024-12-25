@@ -8,6 +8,6 @@ class PageRepository
 {
     public function get(int $pageId): Page
     {
-        return Page::find($pageId);
+        return Page::with('content')->find($pageId);
     }
 }
