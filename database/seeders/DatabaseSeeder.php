@@ -10,12 +10,14 @@ use App\Models\Content;
 use App\Models\Header;
 use App\Models\Mongo\BodyStylesMongo;
 use App\Models\Mongo\ButtonsStylesMongo;
+use App\Models\Mongo\ContentMongo;
 use App\Models\Page;
 use App\Models\Site;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Factories\SiteFactory;
 use Database\Factories\UserFactory;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -49,7 +51,14 @@ class DatabaseSeeder extends Seeder
         $pages = Page::factory()->count(5)->for($body)->create();
 
         foreach ($pages as $page) {
-            Content::factory()->for($page)->create();
+
+            $content = Content::factory()->for($page)->create();
+
+            $contentMongo = new ContentMongo();
+            $contentMongo->id = $content->id;
+            $contentMongo->content = Factory::create()->randomHtml();
+            $contentMongo->save();
+
             $button = Button::factory()->for($page)->create();
             $buttonStyles = new ButtonsStylesMongo();
             $buttonStyles->id = $button->id;
@@ -61,7 +70,9 @@ class DatabaseSeeder extends Seeder
             $buttonStyles->updated_at = now();
             $buttonStyles->created_at = now();
             $buttonStyles->save();
+
         }
+
         $header = Header::factory()->for($site)->create();
 
         $buttonHeader = Button::orderBy('id','desc')->first();
