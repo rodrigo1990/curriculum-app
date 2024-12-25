@@ -38,6 +38,8 @@ class SiteController extends Controller
         }catch (\Throwable $e){
             if($this->getNotFoundConditional($e))
                 throw new \Exception('Site not found');
+            else
+                throw new \Exception($e->getMessage());
         }
     }
 }
