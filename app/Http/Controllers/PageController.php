@@ -13,7 +13,11 @@ class PageController extends Controller
     }
 
     public function get(Request $request){
-        $page = $this->pageService->get($request->page_id);
-        return new StdResource($page);
+        try {
+            $page = $this->pageService->get($request->page_id);
+            return new StdResource($page);
+        }catch(\Throwable $e){
+            throw new \Exception('Page not found');
+        }
     }
 }
