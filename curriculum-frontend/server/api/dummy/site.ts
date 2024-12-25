@@ -1,7 +1,5 @@
-let data = [
+const site =
     {
-        "data": {
-            "site": {
                 "id": 1,
                 "name": "Juwan Ferry Jr.",
                 "profile_image": "https://via.placeholder.com/640x480.png/0044ee?text=qui",
@@ -131,18 +129,12 @@ let data = [
                         }
                     ]
                 }
-            }
-        }
-    },
-  ];
 
-export default defineEventHandler (async () => {
-    let response =  await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(data[0])
-        },0);
-    })
+
+    };
+
+export default defineEventHandler ((event) => {
     return {
-        response
+        site
     }
 })
