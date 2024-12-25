@@ -3,11 +3,12 @@
 namespace App\Repositories;
 
 use App\Interfaces\SiteRepositoryInterface;
-use App\Models\Mongo\BodyStyles;
+use App\Models\Mongo\BodyStylesMongo;
 
 class BodyMongoRepository implements SiteRepositoryInterface
 {
-    public function getBody(int $id){
-        return BodyStyles::where('id', $id)->first();
+    public function getBody(int $id):BodyStylesMongo
+    {
+        return BodyStylesMongo::where('id', $id)->first();
     }
 }

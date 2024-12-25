@@ -33,7 +33,11 @@ class SiteService implements SiteServiceInterface {
     public function getSiteByUser(string $username):SiteDto
     {
         $siteDto = new SiteDto();
-        $user = $this->userRepository->getUserByUsername($username);
+        try {
+            $user = $this->userRepository->getUserByUsername($username);
+        }catch (\Throwable $e){
+            throw new \Exception('User not found',1);
+        }
         $site = $this->siteRepository->getSiteByUserId($user->id);
 
         $bodyStyles = $this->bodyMongoRepository->getBody($site->id);

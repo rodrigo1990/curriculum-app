@@ -8,14 +8,16 @@ use App\Models\ButtonBody;
 use App\Models\ButtonHeader;
 use App\Models\Content;
 use App\Models\Header;
-use App\Models\Mongo\BodyStyles;
-use App\Models\Mongo\ButtonsStyles;
+use App\Models\Mongo\BodyStylesMongo;
+use App\Models\Mongo\ButtonsStylesMongo;
+use App\Models\Mongo\ContentMongo;
 use App\Models\Page;
 use App\Models\Site;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Database\Factories\SiteFactory;
 use Database\Factories\UserFactory;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -31,6 +33,7 @@ class DatabaseSeeder extends Seeder
         config(['database.connections.mongodb.database' => env('MONGO_DB')]);
         DB::connection('mongodb')->getMongoDB()->dropCollection('body_styles');
         DB::connection('mongodb')->getMongoDB()->dropCollection('buttons_styles');
+        DB::connection('mongodb')->getMongoDB()->dropCollection('content');
 
 
         $user = User::factory()->create(['username' => 'rodrigo1990']);
@@ -38,7 +41,7 @@ class DatabaseSeeder extends Seeder
         $site = Site::factory()->for($user)->create();
 
         $body = Body::factory()->for($site)->create();
-        $bodyStyles = new BodyStyles();
+        $bodyStyles = new BodyStylesMongo();
         $bodyStyles->id = $body->id;
         $bodyStyles->backgroundGradient = 'background-color:red;';
         $bodyStyles->created_at = now();
@@ -48,9 +51,16 @@ class DatabaseSeeder extends Seeder
         $pages = Page::factory()->count(5)->for($body)->create();
 
         foreach ($pages as $page) {
-            Content::factory()->for($page)->create();
+
+            $content = Content::factory()->for($page)->create();
+
+            $contentMongo = new ContentMongo();
+            $contentMongo->id = $content->id;
+            $contentMongo->content = Factory::create()->randomHtml();
+            $contentMongo->save();
+
             $button = Button::factory()->for($page)->create();
-            $buttonStyles = new ButtonsStyles();
+            $buttonStyles = new ButtonsStylesMongo();
             $buttonStyles->id = $button->id;
             $buttonStyles->fontFamily = 'Roboto-Thin';
             $buttonStyles->color = 'white';
@@ -60,7 +70,9 @@ class DatabaseSeeder extends Seeder
             $buttonStyles->updated_at = now();
             $buttonStyles->created_at = now();
             $buttonStyles->save();
+
         }
+
         $header = Header::factory()->for($site)->create();
 
         $buttonHeader = Button::orderBy('id','desc')->first();

@@ -5,7 +5,7 @@ namespace App\Models\Mongo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use MongoDB\Laravel\Eloquent\Model;
 
-class ButtonsStyles extends Model
+class ButtonsStylesMongo extends Model
 {
     use HasFactory;
 

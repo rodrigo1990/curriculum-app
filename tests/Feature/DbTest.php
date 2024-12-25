@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Site;
-use App\Models\Mongo\BodyStyles;
+use App\Models\Mongo\BodyStylesMongo;
 use App\Repositories\SiteRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;

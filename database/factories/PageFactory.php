@@ -18,7 +18,7 @@ class PageFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->title(),
+            'title' => ucfirst($this->faker->word()),
             'slug' => $this->faker->slug(),
             'body_id' => Body::factory(),
             'created_at' => now(),

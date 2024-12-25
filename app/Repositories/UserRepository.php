@@ -8,6 +8,6 @@ class UserRepository
 {
     public function getUserByUsername(string $username):User
     {
-        return User::where('username', $username)->firstOrFail();
+        return User::where('username', $username)->first();
     }
 }
