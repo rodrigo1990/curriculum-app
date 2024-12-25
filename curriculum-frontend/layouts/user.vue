@@ -21,22 +21,25 @@
 
 <script setup>
   ///api/dummy/site
-  const {data} = await useFetch('/api/dummy/site')
+  const {data} = await useFetch('/api/site')
   const buttonsBody = ref(data.value.site.body.buttons).value
   const buttonsHeader = ref(data.value.site.header.buttons).value
   const backgroundColor = ref(data.value.site.body.styles.backgroundGradient).value
   const profileImg = ref(data.value.site.profile_image).value
-  useHead({
-    style: [
-      {
-        children: `
+
+  if(import.meta.client ) {
+    useHead({
+      style: [
+        {
+          children: `
           body {
             ${backgroundColor}
           }
         `
-      }
-    ]
-  })
+        }
+      ]
+    })
+  }
 
 </script>
 
