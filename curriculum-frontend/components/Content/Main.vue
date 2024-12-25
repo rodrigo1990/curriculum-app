@@ -14,8 +14,15 @@
 
 <script setup>
     const route = useRoute()
-    const {data: getContent, pendingBtnsBody} = await useFetch('/api/dummy/content/'+route.params.id)
-    const data = ref(getContent.value.response)
+
+    // const {data: getContent, pendingBtnsBody} = await useFetch('/api/dummy/content/'+route.params.id)
+    // const data = ref(getContent.value.response)
+
+
+    const {data: content} = await useFetch('/api/content/'+route.params.id)
+    console.log(content.value.page.content.content)
+    const data = ref(content.value.page.content.content)
+    // const dataReal = ref(content.value.response)
 </script>
 
 <style scoped lang="scss">
