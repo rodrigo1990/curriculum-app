@@ -17,7 +17,8 @@ class PageController extends Controller
             $page = $this->pageService->get($request->page_id);
             return new StdResource($page);
         }catch(\Throwable $e){
-            throw new \Exception('Page not found');
+            if($this->getNotFoundConditional($e))
+                throw new \Exception('Page not found');
         }
     }
 }
