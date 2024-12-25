@@ -22,7 +22,7 @@ const site =
                 {
                     "button": {
                         "id": 1,
-                        "name": "Reilly Bogisich PhD",
+                        "name": "Whoami!",
                         "page_id": 1,
                         "created_at": "2024-12-21T07:52:17.000000Z",
                         "updated_at": "2024-12-21T07:52:17.000000Z"
@@ -42,7 +42,7 @@ const site =
                 {
                     "button": {
                         "id": 2,
-                        "name": "Elwin Denesik V",
+                        "name": "Academics",
                         "page_id": 2,
                         "created_at": "2024-12-21T07:52:17.000000Z",
                         "updated_at": "2024-12-21T07:52:17.000000Z"
@@ -62,7 +62,7 @@ const site =
                 {
                     "button": {
                         "id": 3,
-                        "name": "Rodrick Roberts",
+                        "name": "Services",
                         "page_id": 3,
                         "created_at": "2024-12-21T07:52:17.000000Z",
                         "updated_at": "2024-12-21T07:52:17.000000Z"
@@ -82,7 +82,7 @@ const site =
                 {
                     "button": {
                         "id": 4,
-                        "name": "Narciso Lang",
+                        "name": "Github",
                         "page_id": 4,
                         "created_at": "2024-12-21T07:52:17.000000Z",
                         "updated_at": "2024-12-21T07:52:17.000000Z"
@@ -110,7 +110,7 @@ const site =
                 {
                     "button": {
                         "id": 5,
-                        "name": "Dr. Bethel Gerlach DVM",
+                        "name": "Call me!",
                         "page_id": 5,
                         "created_at": "2024-12-21T07:52:17.000000Z",
                         "updated_at": "2024-12-21T07:52:17.000000Z"
