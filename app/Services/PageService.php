@@ -15,9 +15,9 @@ class PageService
     {
     }
 
-    public function get(int $id):PageDto
+    public function getPageAndContent(int $id, string $username):PageDto
     {
-        $page = $this->pageRepository->get($id);
+        $page = $this->pageRepository->getByIdUsername($id, $username);
         $content = $this->contentService->getByPageId($id);
 
         $page->content->content = $content;

@@ -19,7 +19,7 @@ class PageController extends Controller
 
     public function get(Request $request){
 
-            $page = $this->pageService->get($request->page_id);
+            $page = $this->pageService->getPageAndContent($request->page_id, $request->username);
             return new StdResource($page);
     }
 }
