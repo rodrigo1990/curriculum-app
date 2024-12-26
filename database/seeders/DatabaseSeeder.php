@@ -78,7 +78,10 @@ class DatabaseSeeder extends Seeder
         $buttonHeader = Button::orderBy('id','desc')->first();
         ButtonHeader::factory()->for($buttonHeader)->for($header)->create();
 
-        $buttonsBody = Button::where('id', '!=', $buttonHeader->id)->get();
+        $pagesIds = $pages->pluck('id')->toArray();
+        $buttonsBody = Button::where('id', '!=', $buttonHeader->id)
+            ->whereIn('page_id', $pagesIds)
+            ->get();
         foreach ($buttonsBody as $buttonBody) {
             ButtonBody::factory()->for($buttonBody)->for($body)->create();
         }
