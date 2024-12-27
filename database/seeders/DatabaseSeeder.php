@@ -45,10 +45,13 @@ class DatabaseSeeder extends Seeder
         $bodyStyles->created_at = now();
         $bodyStyles->updated_at = now();
         $bodyStyles->save();
-        $pages = Page::factory()->count(5)->for($body)->create();
+        $pages = Page::factory()->count(5)->for($body)->create(['default' => false]);
 
-        foreach ($pages as $page) {
-
+        foreach ($pages as $index =>  $page) {
+            if($index === 1){
+                $page->default = true;
+                $page->update();
+            }
             $content = Content::factory()->for($page)->create();
 
             $contentMongo = new ContentMongo();
