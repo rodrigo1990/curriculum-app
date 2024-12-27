@@ -21,6 +21,7 @@ class PageFactory extends Factory
             'title' => ucfirst($this->faker->word()),
             'slug' => $this->faker->slug(),
             'body_id' => Body::factory(),
+            'default' => $this->faker->boolean(),
             'created_at' => now(),
             'updated_at' => now(),
         ];
