@@ -37,9 +37,7 @@ class DatabaseSeeder extends Seeder
 
 
         $user = User::factory()->create(['username' => 'rodrigo1990']);
-
         $site = Site::factory()->for($user)->create();
-
         $body = Body::factory()->for($site)->create();
         $bodyStyles = new BodyStylesMongo();
         $bodyStyles->id = $body->id;
@@ -47,7 +45,6 @@ class DatabaseSeeder extends Seeder
         $bodyStyles->created_at = now();
         $bodyStyles->updated_at = now();
         $bodyStyles->save();
-
         $pages = Page::factory()->count(5)->for($body)->create();
 
         foreach ($pages as $page) {
