@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->unsignedBigInteger('body_id');
+            $table->boolean('default')->default(false);
             $table->timestamps();
             $table->foreign('body_id')->references('id')->on('bodies');
         });
