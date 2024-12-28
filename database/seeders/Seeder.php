@@ -18,13 +18,13 @@ use Illuminate\Database\Eloquent\Collection;
 
 abstract class Seeder extends \Illuminate\Database\Seeder
 {
-    protected function seedContent(Collection $users){
+    protected function seedContent(Collection $users, string $mainColor, string $secondaryColor){
         foreach($users as $user){
             $site = Site::factory()->for($user)->create();
             $body = Body::factory()->for($site)->create();
             $bodyStyles = new BodyStylesMongo();
             $bodyStyles->id = $body->id;
-            $bodyStyles->backgroundGradient = 'background-color:red;';
+            $bodyStyles->backgroundGradient = 'background-color:'.$mainColor.';';
             $bodyStyles->created_at = now();
             $bodyStyles->updated_at = now();
             $bodyStyles->save();
@@ -40,15 +40,16 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $contentMongo = new ContentMongo();
                 $contentMongo->id = $content->id;
                 $contentMongo->content = Factory::create()->randomHtml();
+                $contentMongo->color = $secondaryColor;
                 $contentMongo->save();
 
                 $button = Button::factory()->for($page)->create();
                 $buttonStyles = new ButtonsStylesMongo();
                 $buttonStyles->id = $button->id;
                 $buttonStyles->fontFamily = 'Roboto-Thin';
-                $buttonStyles->color = 'white';
+                $buttonStyles->color = $secondaryColor;
                 $buttonStyles->fontSize = '1.70rem';
-                $buttonStyles->afterLineBackground = '#CC5F00';
+                $buttonStyles->afterLineBackground = $secondaryColor;
                 $buttonStyles->class = 'afterLine';
                 $buttonStyles->updated_at = now();
                 $buttonStyles->created_at = now();
