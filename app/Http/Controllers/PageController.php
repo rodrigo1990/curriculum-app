@@ -22,4 +22,10 @@ class PageController extends Controller
             $page = $this->pageService->getPageAndContent($request->page_slug, $request->username);
             return new StdResource($page);
     }
+
+    public function getDefault(Request $request){
+
+        $page = $this->pageService->getDefaultPageAndContent($request->username);
+        return new StdResource($page);
+    }
 }

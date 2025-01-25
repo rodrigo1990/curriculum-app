@@ -17,4 +17,17 @@ class PageRepository
             ->select('pages.*')
             ->first();
     }
+
+
+    public function getDefault(string $username): Page
+    {
+        return Page::with(['content'])
+            ->join('bodies','pages.body_id','=','bodies.id')
+            ->join('sites','bodies.site_id','=','sites.id')
+            ->join('users','sites.user_id','=','users.id')
+            ->where('users.username',$username)
+            ->where('pages.default',1)
+            ->select('pages.*')
+            ->first();
+    }
 }

@@ -18,14 +18,23 @@ class PageService
     public function getPageAndContent(string $pageSlug, string $username):PageDto
     {
         $page = $this->pageRepository->getBySlugUsername($pageSlug, $username);
-        $content = $this->contentService->getByPageId($page->id);
+        return $this->getPageContent($page);
+    }
 
+    public function getDefaultPageAndContent(string $username):PageDto
+    {
+        $page = $this->pageRepository->getDefault($username);
+        return $this->getPageContent($page);
+    }
+
+    protected function getPageContent(Page $page):PageDto
+    {
+        $content = $this->contentService->getByPageId($page->id);
         $page->content->content = $content;
         $pageDto = new PageDto();
         $pageDto->page = $page;
 
         return $pageDto;
-
     }
 
 }

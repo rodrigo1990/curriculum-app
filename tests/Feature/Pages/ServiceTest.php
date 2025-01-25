@@ -39,4 +39,14 @@ class ServiceTest extends TestCase
         else
             $this->assertTrue(false);
     }
+
+
+    public function test_get_default_page(){
+        $site = Site::with(['user','body'])->first();
+        $pageResult = $this->service->getDefaultPageAndContent($site->user()->first()->username);
+        if($pageResult && $pageResult->page->default === 1)
+            $this->assertTrue(true);
+        else
+            $this->assertTrue(false);
+    }
 }
