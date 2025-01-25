@@ -14,6 +14,7 @@ class PageRepository
             ->join('users','sites.user_id','=','users.id')
             ->where('pages.slug',$slug)
             ->where('users.username',$username)
+            ->select('pages.*')
             ->first();
     }
 }
