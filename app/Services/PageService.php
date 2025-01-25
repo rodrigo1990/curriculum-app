@@ -15,10 +15,10 @@ class PageService
     {
     }
 
-    public function getPageAndContent(int $id, string $username):PageDto
+    public function getPageAndContent(string $pageSlug, string $username):PageDto
     {
-        $page = $this->pageRepository->getByIdUsername($id, $username);
-        $content = $this->contentService->getByPageId($id);
+        $page = $this->pageRepository->getBySlugUsername($pageSlug, $username);
+        $content = $this->contentService->getByPageId($page->id);
 
         $page->content->content = $content;
         $pageDto = new PageDto();
