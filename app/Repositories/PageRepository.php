@@ -6,14 +6,28 @@ use App\Models\Page;
 
 class PageRepository
 {
-    public function getByIdUsername(int $pageId, string $username): Page
+    public function getBySlugUsername(string $slug, string $username): Page
     {
         return Page::with(['content'])
             ->join('bodies','pages.body_id','=','bodies.id')
             ->join('sites','bodies.site_id','=','sites.id')
             ->join('users','sites.user_id','=','users.id')
-            ->where('pages.id',$pageId)
+            ->where('pages.slug',$slug)
             ->where('users.username',$username)
+            ->select('pages.*')
+            ->first();
+    }
+
+
+    public function getDefault(string $username): Page
+    {
+        return Page::with(['content'])
+            ->join('bodies','pages.body_id','=','bodies.id')
+            ->join('sites','bodies.site_id','=','sites.id')
+            ->join('users','sites.user_id','=','users.id')
+            ->where('users.username',$username)
+            ->where('pages.default',1)
+            ->select('pages.*')
             ->first();
     }
 }

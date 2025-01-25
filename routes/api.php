@@ -9,4 +9,4 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/{username}', [\App\Http\Controllers\SiteController::class, 'getSiteByUser']);
 
-Route::get('/{username}/{page_id}', [\App\Http\Controllers\PageController::class, 'get']);
+Route::get('/{username}/{page_slug}', [\App\Http\Controllers\PageController::class, 'get']);

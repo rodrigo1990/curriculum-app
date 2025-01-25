@@ -18,6 +18,6 @@ class DatabaseSeeder extends \Database\Seeders\Seeder
         DB::connection('mongodb')->getMongoDB()->dropCollection('content');
 
         $user = User::factory()->create(['username' => 'rodrigo1990'])->get();
-        $this->seedContent($user);
+        $this->seedContent($user,'red','white');
     }
 }

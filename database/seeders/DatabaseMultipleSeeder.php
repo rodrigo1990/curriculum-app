@@ -12,6 +12,6 @@ class DatabaseMultipleSeeder extends \Database\Seeders\Seeder
     public function run(): void
     {
         $users = User::factory()->count(50)->create();
-        $this->seedContent($users);
+        $this->seedContent($users,'white','black');
     }
 }

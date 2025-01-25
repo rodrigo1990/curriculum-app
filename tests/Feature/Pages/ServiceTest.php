@@ -33,8 +33,18 @@ class ServiceTest extends TestCase
     public function test_get_page_by_id_and_username(){
         $site = Site::with(['user','body'])->first();
         $page = Page::where('body_id', $site->body()->first()->id)->first();
-        $pageResult = $this->service->getPageAndContent($page->id, $site->user()->first()->username);
+        $pageResult = $this->service->getPageAndContent($page->slug, $site->user()->first()->username);
         if($pageResult)
+            $this->assertTrue(true);
+        else
+            $this->assertTrue(false);
+    }
+
+
+    public function test_get_default_page(){
+        $site = Site::with(['user','body'])->first();
+        $pageResult = $this->service->getDefaultPageAndContent($site->user()->first()->username);
+        if($pageResult && $pageResult->page->default === 1)
             $this->assertTrue(true);
         else
             $this->assertTrue(false);

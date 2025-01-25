@@ -18,8 +18,11 @@ class PageController extends Controller
     }
 
     public function get(Request $request){
-
-            $page = $this->pageService->getPageAndContent($request->page_id, $request->username);
-            return new StdResource($page);
+        if($request->page_slug == 'home')
+            $page = $this->pageService->getDefaultPageAndContent($request->username);
+        else
+            $page = $this->pageService->getPageAndContent($request->page_slug, $request->username);
+        return new StdResource($page);
     }
+
 }
