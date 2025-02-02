@@ -19,8 +19,8 @@ class SiteFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'profile_image' => $this->faker->imageUrl(),
-            'logo' => $this->faker->imageUrl(),
+            'profile_image' => 'default.webp',
+            'logo' => 'default.png',
             'user_id' => User::factory(),
             'created_at' => now(),
             'updated_at' => now(),
