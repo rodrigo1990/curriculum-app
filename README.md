@@ -5,8 +5,10 @@ This is a project in development with NuxtJs 3 and Laravel.
 ## Serve Laravel
 - Execute on terminal: sail build --no-cache
 - Execute on terminal: sail up -d
-- Execute on terminal: sail artisan up -d
 - Execute on terminal: sail composer install
+- Execute on terminal: sail artisan migrate --seed
+- Execute on terminal: sail artisan db:seed --class=DatabaseMultipleSeeder (for multiple records)
+- Refresh and seed: sail artisan migrate:fresh --seed
 
 ## Serve Nuxt.js app
 - Execute on terminal: npm install
