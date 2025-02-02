@@ -8,5 +8,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/{username}', [\App\Http\Controllers\SiteController::class, 'getSiteByUser']);
-
 Route::get('/{username}/{page_slug}', [\App\Http\Controllers\PageController::class, 'get']);
+Route::get('/users/get', [\App\Http\Controllers\UsersControllers::class, 'getAllUsers']);
