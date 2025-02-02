@@ -20,6 +20,6 @@ class ServiceTest extends TestCase
 
     public function testGetAllUsers(){
         $usersDto = $this->usersService->getAllUsers();
-        $this->assertGreaterThan(0, count($usersDto->users));
+        $this->assertGreaterThanOrEqual(1, count($usersDto->users));
     }
 }

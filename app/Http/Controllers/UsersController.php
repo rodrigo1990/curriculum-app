@@ -7,7 +7,7 @@ use App\Services\UserService;
 use App\Services\UsersService;
 use Illuminate\Http\Request;
 
-class UsersControllers extends Controller
+class UsersController extends Controller
 {
     function __construct( private UserService $userService)
     {
