@@ -12,11 +12,11 @@ class UserService
     {
     }
 
-    public function login($email, $password):?array{
+    public function login($email, $password):?User{
         $user = $this->userRepository->getUsernameByEmail($email);
         if(Hash::check($password,$user->password)) {
             if ($user)
-                return ['token' => $user->createToken('login')->plainTextToken, 'user' => $user];
+                return $user;
         }
         return null;
     }

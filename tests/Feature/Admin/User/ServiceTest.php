@@ -25,9 +25,9 @@ class ServiceTest extends TestCase
     {
         $user = User::first();
 
-        $result = $this->service->login($user->email,'password');
+        $user = $this->service->login($user->email,'password');
 
-        if(!empty($result['token']) && !empty($result['user']))
+        if(!empty($user))
             $this->assertTrue(true);
         else
             $this->assertFalse(true);
