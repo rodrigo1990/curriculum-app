@@ -12,7 +12,11 @@ Route::get('site/{username}', [\App\Http\Controllers\SiteController::class, 'get
 Route::get('page/{username}/{page_slug}', [\App\Http\Controllers\PageController::class, 'get']);
 Route::get('/users/get', [\App\Http\Controllers\UsersController::class, 'getAllUsers']);
 
-Route::middleware(['auth:sanctum'])->prefix('admin')->group(function () {
-    Route::post('/login',[\App\Http\Controllers\Admin\UserController::class,'login'])
+
+Route::middleware(['guest'])->prefix('admin')->group(function () {
+    Route::post('/login',[\App\Http\Controllers\Admin\LoginController::class,'login']);
+
+    Route::get('/isAuthenticated', [\App\Http\Controllers\Admin\LoginController::class, 'isAuthenticated'])
         ->withoutMiddleware(['auth:sanctum']);
+;
 });
