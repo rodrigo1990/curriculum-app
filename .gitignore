@@ -20,3 +20,6 @@ yarn-error.log
 /.vscode
 /.zed
 /curriculum-app-front
+/curriculum-app-front
+/curriculum-app-front/*
+/curriculum-app-front/
