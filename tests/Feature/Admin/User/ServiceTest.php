@@ -5,7 +5,6 @@ namespace Admin\User;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Services\Admin\LoginService;
-use App\Services\Admin\UserService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
