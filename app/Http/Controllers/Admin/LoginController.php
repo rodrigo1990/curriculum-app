@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\StdResource;
 use App\Services\Admin\LoginService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,7 @@ class LoginController extends Controller
         return $request->user();
     }
 
-    public function login(Request $request){
+    public function login(Request $request):JsonResponse{
         $user = $this->loginService->login(
             $request
         );
@@ -27,5 +28,9 @@ class LoginController extends Controller
             'token' => $user->createToken('web')->plainTextToken,
         ];
         return response()->json($response);
+    }
+
+    public function logout(Request $request):JsonResponse{
+        return response()->json($this->loginService->logout($request));
     }
 }
