@@ -29,4 +29,9 @@ class LoginService
         }
         return null;
     }
+
+    public function logout(Request $request):bool{
+        Auth::guard('web')->logout();
+        return true;
+    }
 }
