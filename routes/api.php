@@ -13,10 +13,9 @@ Route::get('page/{username}/{page_slug}', [\App\Http\Controllers\PageController:
 Route::get('/users/get', [\App\Http\Controllers\UsersController::class, 'getAllUsers']);
 
 
-Route::middleware(['guest'])->prefix('admin')->group(function () {
-    Route::post('/login',[\App\Http\Controllers\Admin\LoginController::class,'login']);
-
-    Route::get('/isAuthenticated', [\App\Http\Controllers\Admin\LoginController::class, 'isAuthenticated'])
-        ->withoutMiddleware(['auth:sanctum']);
-;
+Route::prefix('admin')->group(function () {
+    Route::middleware(['guest'])->post('/login',[\App\Http\Controllers\Admin\LoginController::class,'login']);
+    Route::middleware('auth:sanctum')->group(function(){
+        Route::post('/logout',[\App\Http\Controllers\Admin\LoginController::class,'logout']);
+    });
 });
