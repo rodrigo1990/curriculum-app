@@ -4,6 +4,7 @@ namespace App\Services\Admin;
 
 use App\Models\User;
 use App\Repositories\UserRepository;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,19 +14,13 @@ class LoginService
     {
     }
 
-
-
-    public function login($request):?User{
+    public function login($request):?Authenticatable{
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
         if (Auth::attempt($credentials)) {
-            $user = $this->userRepository->getUsernameByEmail($request->get('email'));
-            if(Auth::user())
-                return $user;
-            else
-                return null;
+            return Auth::user();
         }
         return null;
     }

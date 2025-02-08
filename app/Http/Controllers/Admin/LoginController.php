@@ -24,10 +24,7 @@ class LoginController extends Controller
             $request
         );
 
-        $response = [
-            'token' => $user->createToken('web')->plainTextToken,
-        ];
-        return response()->json($response);
+        return response()->json($user);
     }
 
     public function logout(Request $request):JsonResponse{
