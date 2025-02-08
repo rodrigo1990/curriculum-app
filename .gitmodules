@@ -1,4 +1,4 @@
 [submodule "curriculum-app-front"]
 	path = curriculum-app-front
 	url = https://github.com/rodrigo1990/curriculum-app-front
-	ignore = all
+	ignore = dirty
