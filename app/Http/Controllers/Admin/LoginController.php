@@ -27,7 +27,7 @@ class LoginController extends Controller
         return response()->json($user);
     }
 
-    public function logout(Request $request):JsonResponse{
-        return response()->json($this->loginService->logout($request));
+    public function logout():JsonResponse{
+        return response()->json($this->loginService->logout());
     }
 }

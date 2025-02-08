@@ -25,7 +25,7 @@ class LoginService
         return null;
     }
 
-    public function logout(Request $request):bool{
+    public function logout():bool{
         Auth::guard('web')->logout();
         return true;
     }
