@@ -17,7 +17,7 @@ class WorkingExperience extends Model
         'tasks',
         'achievements',
         'user_id',
-        'content_id',
+        'page_id',
     ];
 
     public function user()
@@ -25,8 +25,8 @@ class WorkingExperience extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function content()
+    public function page()
     {
-        return $this->belongsTo(Content::class);
+        return $this->belongsTo(Page::class);
     }
 }

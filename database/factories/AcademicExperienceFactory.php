@@ -20,7 +20,7 @@ class AcademicExperienceFactory extends Factory
             'date_end' => $dateEnd,
             'current' => $dateEnd ? 0 : 1,
             'user_id' => \App\Models\User::factory(),
-            'content_id' => \App\Models\Content::factory(),
+            'page_id' => \App\Models\Page::factory(),
         ];
     }
 }

@@ -19,10 +19,10 @@ return new class extends Migration
             $table->date('date_end')->nullable();
             $table->boolean('current')->default(false);
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('content_id');
+            $table->unsignedBigInteger('page_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('content_id')->references('id')->on('contents')->onDelete('cascade');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
         });
     }
 

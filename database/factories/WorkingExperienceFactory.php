@@ -21,7 +21,7 @@ class WorkingExperienceFactory extends Factory
             'tasks' => $this->faker->paragraph,
             'achievements' => $this->faker->paragraph,
             'user_id' => \App\Models\User::factory(),
-            'content_id' => \App\Models\Content::factory(),
+            'page_id' => \App\Models\Page::factory(),
         ];
     }
 }
