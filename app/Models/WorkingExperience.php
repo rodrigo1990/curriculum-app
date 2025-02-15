@@ -9,6 +9,8 @@ class WorkingExperience extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'company',
         'tasks',

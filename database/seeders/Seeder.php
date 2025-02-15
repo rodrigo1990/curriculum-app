@@ -7,6 +7,7 @@ use App\Models\Button;
 use App\Models\ButtonBody;
 use App\Models\ButtonHeader;
 use App\Models\Content;
+use App\Models\Experience;
 use App\Models\Header;
 use App\Models\Mongo\BodyStylesMongo;
 use App\Models\Mongo\ButtonsStylesMongo;
@@ -58,10 +59,12 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $contentMongo->color = $secondaryColor;
 
                 if ($buttonName == 'Academics') {
-                    AcademicExperience::factory()->count(3)->for($user)->for($content)->create();
+                    $experience = Experience::factory()->for($site)->for($page)->create();
+                    AcademicExperience::factory()->for($experience)->create();
                     $contentMongo->content = 'Academic Experiences';
                 } elseif ($buttonName == 'Working Experience') {
-                    WorkingExperience::factory()->count(3)->for($user)->for($content)->create();
+                    $experience = Experience::factory()->for($site)->for($page)->create();
+                    WorkingExperience::factory()->for($experience)->create();
                     $contentMongo->content = 'Working Experiences';
                 } else {
                     $contentMongo->content = Factory::create()->randomHtml();
@@ -71,7 +74,7 @@ abstract class Seeder extends \Illuminate\Database\Seeder
             }
 
             $header = Header::factory()->for($site)->create();
-            $buttonHeader = Button::factory()->create(['name' => 'Call me!']);
+            $buttonHeader = Button::factory()->for($page)->create(['name' => 'Call me!']);
             ButtonHeader::factory()->for($buttonHeader)->for($header)->create();
 
             $buttonStyles = new ButtonsStylesMongo();

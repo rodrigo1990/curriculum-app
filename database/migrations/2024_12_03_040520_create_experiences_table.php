@@ -17,8 +17,10 @@ return new class extends Migration
             $table->date('date_end')->nullable();
             $table->boolean('current')->default(false);
             $table->unsignedBigInteger('site_id');
+            $table->unsignedBigInteger('page_id');
             $table->timestamps();
             $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
         });
     }
 

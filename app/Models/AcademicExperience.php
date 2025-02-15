@@ -9,6 +9,8 @@ class AcademicExperience extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'institution',
         'career',
