@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('academic_experiences', function (Blueprint $table) {
             $table->id();
             $table->string('institution');
-            $table->string('period');
             $table->string('career');
             $table->date('date_start');
             $table->date('date_end')->nullable();

@@ -13,7 +13,6 @@ class AcademicExperienceFactory extends Factory
     {
         return [
             'institution' => $this->faker->company,
-            'period' => $this->faker->word,
             'career' => $this->faker->jobTitle,
             'date_start' => $this->faker->date,
             'date_end' => $this->faker->optional()->date,
