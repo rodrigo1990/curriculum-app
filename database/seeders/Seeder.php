@@ -30,22 +30,64 @@ abstract class Seeder extends \Illuminate\Database\Seeder
             $bodyStyles->created_at = now();
             $bodyStyles->updated_at = now();
             $bodyStyles->save();
-            $pages = Page::factory()->count(5)->for($body)->create(['default' => false]);
 
-            foreach ($pages as $index =>  $page) {
+            $pages = Page::factory()->count(4)->for($body)->create(['default' => false]);
+
+            $buttons = [
+                'Academics' => null,
+                'Working Experience' => null,
+                'Contact' => null,
+                'Call me!' => null,
+            ];
+
+            foreach ($pages as $index => $page) {
                 if($index === 1){
                     $page->default = true;
                     $page->update();
                 }
+                $buttonName = array_keys($buttons)[$index];
+                $button = Button::factory()->for($page)->create(['name' => $buttonName]);
+                $buttons[$buttonName] = $button;
+
+
+
                 $content = Content::factory()->for($page)->create();
 
                 $contentMongo = new ContentMongo();
                 $contentMongo->id = $content->id;
-                $contentMongo->content = Factory::create()->randomHtml();
                 $contentMongo->color = $secondaryColor;
-                $contentMongo->save();
 
-                $button = Button::factory()->for($page)->create();
+                if ($buttonName == 'Academics') {
+                    AcademicExperience::factory()->count(3)->for($user)->for($content)->create();
+                    $contentMongo->content = 'Academic Experiences';
+                } elseif ($buttonName == 'Working Experience') {
+                    WorkingExperience::factory()->count(3)->for($user)->for($content)->create();
+                    $contentMongo->content = 'Working Experiences';
+                } else {
+                    $contentMongo->content = Factory::create()->randomHtml();
+                }
+
+                $contentMongo->save();
+            }
+
+            $header = Header::factory()->for($site)->create();
+            $buttonHeader = Button::factory()->create(['name' => 'Call me!']);
+            ButtonHeader::factory()->for($buttonHeader)->for($header)->create();
+
+            $buttonStyles = new ButtonsStylesMongo();
+            $buttonStyles->id = $buttonHeader->id;
+            $buttonStyles->fontFamily = 'Roboto-Thin';
+            $buttonStyles->color = $secondaryColor;
+            $buttonStyles->fontSize = '1.70rem';
+            $buttonStyles->afterLineBackground = $secondaryColor;
+            $buttonStyles->class = 'afterLine';
+            $buttonStyles->updated_at = now();
+            $buttonStyles->created_at = now();
+            $buttonStyles->save();
+
+
+            foreach ($buttons as $button) {
+                ButtonBody::factory()->for($button)->for($body)->create();
                 $buttonStyles = new ButtonsStylesMongo();
                 $buttonStyles->id = $button->id;
                 $buttonStyles->fontFamily = 'Roboto-Thin';
@@ -56,27 +98,7 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $buttonStyles->updated_at = now();
                 $buttonStyles->created_at = now();
                 $buttonStyles->save();
-
-                // Seed working experiences
-                WorkingExperience::factory()->count(3)->for($user)->for($content)->create();
-
-                // Seed academic experiences
-                AcademicExperience::factory()->count(3)->for($user)->for($content)->create();
             }
-
-            $header = Header::factory()->for($site)->create();
-
-            $buttonHeader = Button::orderBy('id','desc')->first();
-            ButtonHeader::factory()->for($buttonHeader)->for($header)->create();
-
-            $pagesIds = $pages->pluck('id')->toArray();
-            $buttonsBody = Button::where('id', '!=', $buttonHeader->id)
-                ->whereIn('page_id', $pagesIds)
-                ->get();
-            foreach ($buttonsBody as $buttonBody) {
-                ButtonBody::factory()->for($buttonBody)->for($body)->create();
-            }
-
         }
     }
 }
