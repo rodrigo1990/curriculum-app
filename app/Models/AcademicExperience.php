@@ -17,7 +17,7 @@ class AcademicExperience extends Model
         'date_end',
         'current',
         'user_id',
-        'page_id',
+        'content_id',
     ];
 
     public function user()
@@ -25,8 +25,8 @@ class AcademicExperience extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function page()
+    public function content()
     {
-        return $this->belongsTo(Page::class);
+        return $this->belongsTo(Content::class);
     }
 }

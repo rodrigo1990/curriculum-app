@@ -58,10 +58,10 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $buttonStyles->save();
 
                 // Seed working experiences
-                WorkingExperience::factory()->count(3)->for($user)->for($page)->create();
+                WorkingExperience::factory()->count(3)->for($user)->for($content)->create();
 
                 // Seed academic experiences
-                AcademicExperience::factory()->count(3)->for($user)->for($page)->create();
+                AcademicExperience::factory()->count(3)->for($user)->for($content)->create();
             }
 
             $header = Header::factory()->for($site)->create();

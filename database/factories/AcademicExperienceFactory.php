@@ -19,7 +19,7 @@ class AcademicExperienceFactory extends Factory
             'date_end' => $this->faker->optional()->date,
             'current' => $this->faker->boolean,
             'user_id' => \App\Models\User::factory(),
-            'page_id' => \App\Models\Page::factory(),
+            'content_id' => \App\Models\Content::factory(),
         ];
     }
 }
