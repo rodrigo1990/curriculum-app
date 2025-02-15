@@ -11,22 +11,11 @@ class WorkingExperience extends Model
 
     protected $fillable = [
         'company',
-        'date_start',
-        'date_end',
-        'current',
         'tasks',
         'achievements',
-        'user_id',
-        'page_id',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function page()
-    {
-        return $this->belongsTo(Page::class);
+    public function experience(){
+        return $this->belongsTo(Experience::class);
     }
 }

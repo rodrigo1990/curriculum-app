@@ -12,17 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('academic_experiences', function (Blueprint $table) {
-            $table->id();
-            $table->string('institution');
-            $table->string('career');
-            $table->date('date_start');
-            $table->date('date_end')->nullable();
-            $table->boolean('current')->default(false);
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('page_id');
-            $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+            $table->foreignId('experience_id')->constrained('experiences');
+            $table->text('institution');
+            $table->text('career');
         });
     }
 

@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('working_experiences', function (Blueprint $table) {
-            $table->foreignId('experience_id')->constrained('experiences');
-            $table->string('company');
-            $table->text('tasks');
-            $table->text('achievements');
+        Schema::create('experiences', function (Blueprint $table) {
+            $table->id();
+            $table->date('date_start');
+            $table->date('date_end')->nullable();
+            $table->boolean('current')->default(false);
+            $table->unsignedBigInteger('site_id');
+            $table->timestamps();
+            $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
         });
     }
 

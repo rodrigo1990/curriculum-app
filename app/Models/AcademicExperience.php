@@ -11,22 +11,10 @@ class AcademicExperience extends Model
 
     protected $fillable = [
         'institution',
-        'period',
         'career',
-        'date_start',
-        'date_end',
-        'current',
-        'user_id',
-        'page_id',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function page()
-    {
-        return $this->belongsTo(Page::class);
+    public function experience(){
+        return $this->belongsTo(Experience::class);
     }
 }
