@@ -13,6 +13,8 @@ use App\Models\Mongo\ButtonsStylesMongo;
 use App\Models\Mongo\ContentMongo;
 use App\Models\Page;
 use App\Models\Site;
+use App\Models\WorkingExperience;
+use App\Models\AcademicExperience;
 use Faker\Factory;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -55,6 +57,11 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $buttonStyles->created_at = now();
                 $buttonStyles->save();
 
+                // Seed working experiences
+                WorkingExperience::factory()->count(3)->for($user)->for($page)->create();
+
+                // Seed academic experiences
+                AcademicExperience::factory()->count(3)->for($user)->for($page)->create();
             }
 
             $header = Header::factory()->for($site)->create();
