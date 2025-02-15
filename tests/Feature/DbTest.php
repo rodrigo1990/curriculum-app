@@ -28,7 +28,7 @@ class DbTest extends TestCase
      */
     public function test_db_seed_was_successful(): void
     {
-        $this->assertDatabaseCount('sites', 1);
+        $this->assertDatabaseHas('users', ['username' => 'rodrigo1990']);
 
     }
 }
