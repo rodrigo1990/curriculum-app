@@ -7,6 +7,7 @@ use App\Models\Button;
 use App\Models\ButtonBody;
 use App\Models\ButtonHeader;
 use App\Models\Content;
+use App\Models\CurriculumUserData;
 use App\Models\Experience;
 use App\Models\Header;
 use App\Models\Mongo\BodyStylesMongo;
@@ -102,6 +103,9 @@ abstract class Seeder extends \Illuminate\Database\Seeder
                 $buttonStyles->created_at = now();
                 $buttonStyles->save();
             }
+
+            CurriculumUserData::factory()->for($site)->create();
+
         }
     }
 }
