@@ -16,9 +16,6 @@ Route::get('/users/get', [\App\Http\Controllers\UsersController::class, 'getAllU
 Route::prefix('admin')->group(function () {
     Route::middleware(['guest'])->post('/login',[\App\Http\Controllers\Admin\LoginController::class,'login']);
     Route::middleware('auth:sanctum')->group(function(){
-        Route::prefix('curriculum')->group(function(){
-            Route::post('/fill-personal-data',[\App\Http\Controllers\Admin\CurriculumPersonalDataController::class, 'create']);
-        });
         Route::post('/logout',[\App\Http\Controllers\Admin\LoginController::class,'logout']);
     });
 });
