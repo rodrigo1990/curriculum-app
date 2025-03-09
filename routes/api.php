@@ -16,7 +16,7 @@ Route::get('/users/get', [\App\Http\Controllers\UsersController::class, 'getAllU
 Route::prefix('admin')->group(function () {
     Route::middleware(['guest'])->post('/login',[\App\Http\Controllers\Admin\LoginController::class,'login']);
     Route::middleware(['guest'])->post('/register',[\App\Http\Controllers\Admin\RegisterController::class,'register']);
-
+    Route::middleware(['guest'])->get('/get-username/{username}',[\App\Http\Controllers\UsersController::class,'getUserByUsername']);
     Route::middleware('auth:sanctum')->group(function(){
         Route::prefix('curriculum')->group(function(){
             Route::post('/fill-personal-data',[\App\Http\Controllers\Admin\CurriculumPersonalDataController::class, 'create']);
