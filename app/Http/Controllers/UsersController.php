@@ -37,4 +37,20 @@ class UsersController extends Controller
                 throw new \Exception($e->getMessage());
         }
     }
+
+    public function register(Request $request)
+    {
+        $validatedData = $request->validate([
+            'username' => 'required|string|unique:users,username',
+            'email' => 'required|string|email|unique:users,email',
+            'password' => 'required|string|min:8',
+        ]);
+
+        try {
+            $user = $this->userService->registerUser($validatedData);
+            return new StdResource($user);
+        } catch (\Throwable $e) {
+            throw new \Exception($e->getMessage());
+        }
+    }
 }
