@@ -27,3 +27,6 @@ https://blog.stackademic.com/debugging-laravel-sail-with-xdebug-3-in-phpstorm-20
 ## MongoDb + laravel + docker tutorials
 https://medium.com/@life.89.blue/configuraci%C3%B3n-de-entorno-en-laravel-mongodb-y-mysql-con-docker-9968e92050fc
 https://hub.docker.com/_/mongo
+
+## Entity Relationship diagram
+![Entity Relationship Diagram](https://github.com/user-attachments/assets/a4bcddba-2e86-447f-9432-b665a465465b)
